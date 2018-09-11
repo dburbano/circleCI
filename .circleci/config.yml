@@ -21,10 +21,9 @@ jobs:
                 name: List files
                 command: |
                     ls ~/
-                    cat ~/.aws
-            - run:
-                name: Get S3 info
-                command: sudo aws s3 ls s3://mach-mobile-automation-repos/test
+                    aws version
+            #- run:
+                #name: Get S3 info
 
 workflows:
     version: 2
