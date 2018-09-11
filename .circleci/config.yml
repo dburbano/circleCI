@@ -28,7 +28,7 @@ jobs:
 
             - run:
                 name: Get S3 info
-                command: aws s3 ls s3://${BUCKET_REPO}/${TEST_REPO}
+                command: aws s3 ls s3://${BUCKET_REPO}/${TEST_REPO}/
 
 workflows:
     version: 2
