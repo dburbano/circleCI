@@ -10,6 +10,9 @@ jobs:
         docker: #Doker image to use aws resources
             - image: circleci/python:2.7-jessie
         working_directory: ~/circleci-docs
+        buid_parameters:
+            BUCKET_REPO: "mach-mobile-automation-repos"
+            TEST_REPO: "test"
         steps:
             - run:
                 name: Install awscli
