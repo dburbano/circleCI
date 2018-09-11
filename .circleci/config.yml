@@ -18,6 +18,9 @@ jobs:
                 name: Install awscli
                 command: sudo pip install awscli
             - run:
+                name: Register credentials
+                command: aws configure
+            - run:
                 name: Get S3 info
                 command: sudo aws s3 ls s3://mach-mobile-automation-repos/test
 
