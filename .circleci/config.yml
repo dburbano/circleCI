@@ -19,7 +19,7 @@ jobs:
                 command: sudo pip install awscli
             - run:
                 name: Get S3 info
-                command: sudo aws s3 ls s3://$BUCKET_REPO/$TEST_REPO/
+                command: sudo aws s3 ls s3://mach-mobile-automation-repos/test
 
 workflows:
     version: 2
