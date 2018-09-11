@@ -21,7 +21,10 @@ jobs:
                 name: List files
                 command: |
                     ls ~/
-                    aws version
+                    aws --version
+                    echo ${AWS_ACCESSKEY_ID}
+                    echo ${AWS_SECRET_ACCESS_KEY}
+                    echo ${BUCKET_REPO}
             #- run:
                 #name: Get S3 info
 
