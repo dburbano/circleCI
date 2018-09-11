@@ -18,15 +18,17 @@ jobs:
                 name: Install awscli
                 command: sudo pip install awscli
             - run:
-                name: List files
+                name: AWS info
                 command: |
-                    ls ~/
                     aws --version
                     echo ${AWS_ACCESS_KEY_ID}
                     echo ${AWS_SECRET_ACCESS_KEY}
+                    echo ${AWS_DEFAULT_REGION}
                     echo ${BUCKET_REPO}
-            #- run:
-                #name: Get S3 info
+
+            - run:
+                name: Get S3 info
+                command: aws se ls s3://${BUCKET_REPO}/${TEST_REPO}
 
 workflows:
     version: 2
