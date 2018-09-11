@@ -28,6 +28,6 @@ workflows:
                     - build
                 filters:
                     branches:
-                        onliy: develop
+                        only: master
 
               
