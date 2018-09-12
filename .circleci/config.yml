@@ -78,6 +78,8 @@ jobs:
             echo "DEVICE POOL ARN: ${DEVICE_POOL_ARN}"
             echo "RUN NAME: ${RUN_NAME}"
             SUFFIX=`date +"%s"`
+            pwd
+            ls
             for TEST_ARN_LINE in `cat ./${TEST_ARN_LIST_FILE}`; do
                 TEST_ARN=${TEST_ARN_LINE##*|}
                 RUN_NAME="S${ENV}-${TEST_ARN_LINE%%|*}"
