@@ -1,12 +1,5 @@
 version: 2
 jobs:
-  build:
-    docker: #Docker executor type
-    working_directory: ~/circleci-docs
-      - image: circleci/node:4.8.2 #Container where you are going to execute the commands.
-    steps:
-      - checkout #Checkout the code in the project directory
-      - run: echo "Hello world"
   checkout-test:
     docker: #Docker executor type
       - image: circleci/node:4.8.2 #Container where you are going to execute the commands.
