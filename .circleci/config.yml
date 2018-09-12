@@ -54,7 +54,9 @@ jobs:
             IPA_ARN="`cat ${IPA_OUTPUT_LOG} | grep "arn:"| sed 's/"arn": //'| sed 's/ //g'| sed 's/[",]//g'`"
             IPA_PRESIGNED_URL="`cat ${IPA_OUTPUT_LOG} | grep "url" | sed 's/"url"://g'|sed 's/[",]//g'`"
             curl -T ${IPA_FILE} ${IPA_PRESIGNED_URL}
-            sleep 60
+            echo "${IPA_ARN}"
+            sleep 120
+            echo "After sleep: ${IPA_ARN}"
       - run:
           name: "STEP 3. Create an upload test package"
           command: |
