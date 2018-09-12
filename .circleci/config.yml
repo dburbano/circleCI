@@ -85,7 +85,7 @@ jobs:
                 TEST_ARN=${TEST_ARN_LINE##*|}
                 RUN_NAME="S${ENV}-${TEST_ARN_LINE%%|*}"
                 sed 's|REPLACE_TEST_ARN|'"${TEST_ARN}"'|g' ./config/template-test.json > ./config/smoke.json
-                aws devicefarm schedule-run --project-arn ${PROJECT_ARN} --app-arn ${IPA_ARN} --device-pool-arn ${DEVICE_POOL_ARN} --name "${RUN_NAME}-${SUFFIX}" --test file://./config/smoke.json > ${RUN_OUTPUT_FILE}
+                aws devicefarm schedule-run --project-arn ${PROJECT_ARN} --app-arn ${IPA_ARN} --device-pool-arn ${DEVICE_POOL_ARN} --name "${RUN_NAME}-${SUFFIX}" --test file://./config/smoke.json
             done
 
 
