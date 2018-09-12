@@ -6,10 +6,12 @@ jobs:
       - image: circleci/node:4.8.2 #Container where you are going to execute the commands.
     steps:
       - checkout #Checkout the code in the project directory
-      - run: |
-          echo "Hello world"
-          ls
-          pwd
+      - run:
+          name: "Test"
+          command: |
+            echo "Hello world"
+            ls
+            pwd
   checkout-test:
     docker: #Docker executor type
       - image: circleci/node:4.8.2 #Container where you are going to execute the commands.
