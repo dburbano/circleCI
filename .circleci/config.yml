@@ -30,7 +30,7 @@ jobs:
       AVAILABLE_TESTS: "available-ios-tests"
       TEST_ARN_LIST_FILE: "smoke-test-arn-list"
       PLATFORM: "ios"
-      ENV: "ops"
+      ENV: "-ops"
     steps:
       - run:
           name: Install awscli
