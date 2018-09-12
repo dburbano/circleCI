@@ -2,10 +2,14 @@ version: 2
 jobs:
   build:
     docker: #Docker executor type
+    working_directory: ~/project
       - image: circleci/node:4.8.2 #Container where you are going to execute the commands.
     steps:
       - checkout #Checkout the code in the project directory
-      - run: echo "Hello world"
+      - run: |
+          echo "Hello world"
+          ls
+          pwd
   checkout-test:
     docker: #Docker executor type
       - image: circleci/node:4.8.2 #Container where you are going to execute the commands.
@@ -14,7 +18,7 @@ jobs:
   aws-test:
     docker: #Doker image to use aws resources
       - image: circleci/python:2.7-jessie
-    working_directory: ~/circleci-docs
+    working_directory: ~/project
     environment:
       BUCKET_REPO: "mach-mobile-automation-repos"
       TEST_REPO: "test"
@@ -90,21 +94,12 @@ jobs:
 
 workflows:
   version: 2
-  build-deploy:
-    jobs:
-      - build
-      - aws-test:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
   test-in-devicefarm:
     jobs:
       - checkout-test:
           filters:
             branches:
-              only: master
+              only: aws-communication
       - aws-test:
           requires:
             - checkout-test
