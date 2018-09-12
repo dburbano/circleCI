@@ -5,6 +5,9 @@ jobs:
       - image: circleci/node:4.8.2 #Container where you are going to execute the commands.
     steps:
       - checkout #Checkout the code in the project directory
+      - run:
+          name:
+          command: pwd && ls
   aws-test:
     docker: #Doker image to use aws resources
       - image: circleci/python:2.7-jessie
