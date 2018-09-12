@@ -68,6 +68,7 @@ jobs:
                 echo "${TEST_FILE}|${TEST_ARN}" >> ./${TEST_ARN_LIST_FILE}
                 TEST_PRESIGNED_URL="`cat ${TEST_OUTPUT_LOG}| grep "url" | sed 's/"url"://'|sed 's/[",]//g'`"
                 curl -T ${TEST_FILE}${ENV}.zip ${TEST_PRESIGNED_URL}
+                sleep 60
             done
       - run:
           name: "STEP 4. Create a device pool associated with the Project"
