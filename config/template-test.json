@@ -1,0 +1,4 @@
+{
+	"type": "APPIUM_JAVA_TESTNG",
+	"testPackageArn": "REPLACE_TEST_ARN"
+}

@@ -22,7 +22,7 @@ jobs:
       PROJECT_ARN: "arn:aws:devicefarm:us-west-2:425782179927:project:69683c23-ccfb-4308-b0f8-33f34d6098e0"
       DEVICE_POOL_NAME: "ApplePhone"
       DEVICE_POOL_ARN: "arn:aws:devicefarm:us-west-2:425782179927:devicepool:69683c23-ccfb-4308-b0f8-33f34d6098e0/67db20ae-9259-439a-ad35-bf29773e5ce4"
-      RUN_NAME: "Smoke-Circleci-Test"
+      RUN_NAME: "Smoke-CircleCI-Test"
       IPA_PATH: "./machApp/build/dev"
       IPA_FILE: "machApp-dev-ops.ipa"
       IPA_OUTPUT_LOG: "machApp-dev.log"
