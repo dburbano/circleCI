@@ -8,7 +8,7 @@ jobs:
   aws-test:
     docker: #Doker image to use aws resources
       - image: circleci/python:2.7-jessie
-    working_directory: ~/circleci-docs
+    working_directory: ./
     environment:
       BUCKET_REPO: "mach-mobile-automation-repos"
       TEST_REPO: "test"
