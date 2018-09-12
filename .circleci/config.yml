@@ -27,19 +27,20 @@ jobs:
       IPA_FILE: "machApp-dev-ops.ipa"
       IPA_OUTPUT_LOG: "machApp-dev.log"
       TEST_OUTPUT_LOG: "test-output.log"
+      AVAILABLE_TESTS: "available-ios-tests"
+      TEST_ARN_LIST_FILE: "smoke-test-arn-list"
       PLATFORM: "ios"
+      ENV: "ops"
     steps:
       - run:
           name: Install awscli
           command: sudo pip install awscli
       - run:
-          name: Project info
-          command: |
-            pwd
-            ls ./
-      - run:
           name: Get IPA file from S3
-          command: aws s3 cp s3://${BUCKET_REPO}/${PLATFORM}/${IPA_FILE} ./${IPA_FILE}
+          command: |
+            aws s3 cp s3://${BUCKET_REPO}/${PLATFORM}/${IPA_FILE} ./${IPA_FILE}
+            pwd
+            ls
       - run:
           name: "STEP 1. DeviceFarm project name"
           command: |
@@ -49,8 +50,8 @@ jobs:
           name: "STEP 2. Create an upload iOS IPA File"
           command: |
             aws devicefarm create-upload --project-arn ${PROJECT_ARN} --name ${IPA_FILE} --type IOS_APP > ${IPA_OUTPUT_LOG}
-            IPA_ARN="`cat ${IPA_OUTPUT_FILE} | grep "arn:"| sed 's/"arn": //'| sed 's/ //g'| sed 's/[",]//g'`"
-            IPA_PRESIGNED_URL="`cat ${IPA_OUTPUT_FILE} | grep "url" | sed 's/"url"://g'|sed 's/[",]//g'`"
+            IPA_ARN="`cat ${IPA_OUTPUT_LOG} | grep "arn:"| sed 's/"arn": //'| sed 's/ //g'| sed 's/[",]//g'`"
+            IPA_PRESIGNED_URL="`cat ${IPA_OUTPUT_LOG} | grep "url" | sed 's/"url"://g'|sed 's/[",]//g'`"
             curl -T ${IPA_FILE} ${IPA_PRESIGNED_URL}
       - run:
           name: "STEP 3. Create an upload test package"
