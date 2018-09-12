@@ -8,6 +8,10 @@ jobs:
       - run:
           name: "Get directory name and get info"
           command: pwd && ls -all
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - config
   aws-test:
     docker: #Doker image to use aws resources
       - image: circleci/python:2.7-jessie
@@ -28,6 +32,8 @@ jobs:
       PLATFORM: "ios"
       ENV: "-ops"
     steps:
+      - attach_workspace:
+          at: ./
       - run:
           name: Install awscli
           command: sudo pip install awscli
@@ -35,8 +41,7 @@ jobs:
           name: Get IPA file from S3
           command: |
             aws s3 cp s3://${BUCKET_REPO}/${PLATFORM}/${IPA_FILE} ./${IPA_FILE}
-            pwd
-            ls
+            pwd && ls -all
       - run:
           name: "STEP 1. DeviceFarm project name"
           command: |
