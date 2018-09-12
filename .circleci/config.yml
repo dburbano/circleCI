@@ -3,7 +3,7 @@ jobs:
   checkout-test:
     docker: #Docker executor type
       - image: circleci/node:4.8.2 #Container where you are going to execute the commands.
-    working_directory: ./project
+    working_directory: ./test-project
     steps:
       - checkout #Checkout the code in the project directory
       - run:
@@ -12,7 +12,7 @@ jobs:
   aws-test:
     docker: #Doker image to use aws resources
       - image: circleci/python:2.7-jessie
-    working_directory: ./project
+    working_directory: ./test-project
     environment:
       BUCKET_REPO: "mach-mobile-automation-repos"
       TEST_REPO: "test"
