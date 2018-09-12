@@ -27,6 +27,7 @@ jobs:
       IPA_FILE: "machApp-dev-ops.ipa"
       IPA_OUTPUT_LOG: "machApp-dev.log"
       TEST_OUTPUT_LOG: "test-output.log"
+      PLATFORM: "ios"
     steps:
       - run:
           name: Install awscli
@@ -38,7 +39,7 @@ jobs:
             ls ./
       - run:
           name: Get IPA file from S3
-          command: aws s3 cp s3://${BUCKET_REPO}/${TEST_REPO}/ios/${IPA_FILE} ./${IPA_FILE}
+          command: aws s3 cp s3://${BUCKET_REPO}/${PLATFORM}/${IPA_FILE} ./${IPA_FILE}
       - run:
           name: "STEP 1. DeviceFarm project name"
           command: |
