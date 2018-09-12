@@ -118,7 +118,7 @@ jobs:
             command: sudo pip install awscli
         - run:
             name: Execute test in AWS Device Farm
-            command: ./config/smoke-test.sh
+            command: chmod 755 ./config/smoke-test.sh && ./config/smoke-test.sh
 
 workflows:
   version: 2
