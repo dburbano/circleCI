@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gDC-gG-W50">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Authentication Navigation Controller-->
+        <scene sceneID="5Gv-Xv-ppr">
+            <objects>
+                <navigationController storyboardIdentifier="AuthenticationNavigationController" navigationBarHidden="YES" id="gDC-gG-W50" customClass="AuthenticationNavigationController" customModule="machApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c4M-No-6Sx">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vT8-8D-Mko" kind="show" identifier="showAmountAttemptsError" id="fGd-cJ-wvb"/>
+                        <segue destination="qGY-r3-pq0" kind="show" identifier="showGeneralError" id="19y-wx-pOb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yee-oc-eFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1550" y="113"/>
+        </scene>
+        <!--TEFValidation-->
+        <scene sceneID="Hnh-1m-zI8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TEFValidation" id="vT8-8D-Mko" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcx-yC-G42" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-375" y="-175"/>
+        </scene>
+        <!--Authentication Process Error View Controller-->
+        <scene sceneID="V0W-BG-7Mx">
+            <objects>
+                <viewController storyboardIdentifier="RecoverAccountFailedViewController" id="qGY-r3-pq0" customClass="AuthenticationProcessErrorViewController" customModule="machApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rPj-mG-nKJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="imageAccountFailed" translatesAutoresizingMaskIntoConstraints="NO" id="afH-yf-XQx">
+                                <rect key="frame" x="99.5" y="50" width="176" height="139"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="3Ht-H8-oxD"/>
+                                    <constraint firstAttribute="width" constant="175.5" id="FAm-Xa-Lno"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="No hemos podido validar tu identidad" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fXC-iw-mvg">
+                                <rect key="frame" x="82" y="309.5" width="211" height="49"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="21"/>
+                                <color key="textColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Puedes intentar el proceso de recuperación nuevamente" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="jxE-rx-FH1">
+                                <rect key="frame" x="71.5" y="379.5" width="232" height="37.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kj-v0-bn4" customClass="RoundedButton" customModule="machApp" customModuleProvider="target">
+                                <rect key="frame" x="88.5" y="535" width="198" height="52"/>
+                                <color key="backgroundColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="198" id="Css-Ve-I7U"/>
+                                    <constraint firstAttribute="height" constant="52" id="wmi-Uf-6SC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                                <state key="normal" title="IR AL INICIO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="26"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="26"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="understandButtonPressed:" destination="qGY-r3-pq0" eventType="touchUpInside" id="cTh-KZ-XxP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jxE-rx-FH1" firstAttribute="top" secondItem="fXC-iw-mvg" secondAttribute="bottom" constant="21" id="8TK-CB-cvS"/>
+                            <constraint firstItem="2S0-MX-MpP" firstAttribute="bottom" secondItem="5kj-v0-bn4" secondAttribute="bottom" constant="80" id="G58-oi-GLg" customClass="DeviceLayoutConstraint" customModule="machApp" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone4">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone5">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone6">
+                                        <real key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone6Plus">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphoneX">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="5kj-v0-bn4" firstAttribute="centerX" secondItem="rPj-mG-nKJ" secondAttribute="centerX" id="MsH-x7-bVj"/>
+                            <constraint firstItem="fXC-iw-mvg" firstAttribute="centerX" secondItem="rPj-mG-nKJ" secondAttribute="centerX" id="OWQ-0d-MHW"/>
+                            <constraint firstItem="afH-yf-XQx" firstAttribute="centerX" secondItem="rPj-mG-nKJ" secondAttribute="centerX" id="Xyh-qV-q6E"/>
+                            <constraint firstItem="afH-yf-XQx" firstAttribute="top" secondItem="2S0-MX-MpP" secondAttribute="top" constant="30" id="YQM-D9-99Q" customClass="DeviceLayoutConstraint" customModule="machApp" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone4">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone5">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone6">
+                                        <real key="value" value="55"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone6Plus">
+                                        <real key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphoneX">
+                                        <real key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="jxE-rx-FH1" firstAttribute="width" secondItem="fXC-iw-mvg" secondAttribute="width" multiplier="1.1" id="Zl0-BH-haE"/>
+                            <constraint firstItem="fXC-iw-mvg" firstAttribute="width" secondItem="afH-yf-XQx" secondAttribute="width" multiplier="1.2" id="knu-Cs-X6b"/>
+                            <constraint firstItem="fXC-iw-mvg" firstAttribute="centerY" secondItem="rPj-mG-nKJ" secondAttribute="centerY" id="r4F-BT-yjb"/>
+                            <constraint firstItem="jxE-rx-FH1" firstAttribute="centerX" secondItem="fXC-iw-mvg" secondAttribute="centerX" id="wE0-vD-ZXm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2S0-MX-MpP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8e-Ha-zFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-375" y="394"/>
+        </scene>
+        <!--Authentication Init Navigation Controller-->
+        <scene sceneID="wD5-cq-goO">
+            <objects>
+                <viewController storyboardIdentifier="StartAuthenticationProcessViewController" hidesBottomBarWhenPushed="YES" id="Eyb-hZ-LcZ" userLabel="Authentication Init Navigation Controller" customClass="StartAuthenticationProcessViewController" customModule="machApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A0q-qB-ih3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="BKa-2h-ubE">
+                                <rect key="frame" x="20" y="100" width="335" height="497"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ilustracionPolicia" translatesAutoresizingMaskIntoConstraints="NO" id="6bX-tq-Yc0">
+                                        <rect key="frame" x="69" y="0.0" width="197" height="166"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="166" id="6qA-wt-eCO"/>
+                                            <constraint firstAttribute="width" constant="197" id="BgO-rU-sPR"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="di2-Yi-mVd">
+                                        <rect key="frame" x="10" y="206" width="315" height="199"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completa una simple prueba de seguridad para:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="S9a-8Q-DC0">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="99.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                                <color key="textColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZw-X0-U2k">
+                                                <rect key="frame" x="0.0" y="99.5" width="315" height="99.5"/>
+                                                <string key="text">- Obtener tu tarjeta Visa MACH
+- Recibir transferencias a tu cuenta - Retirar efectivo en cajeros BCI</string>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWk-Sb-v0D" customClass="LoadingButton" customModule="machApp" customModuleProvider="target">
+                                        <rect key="frame" x="68.5" y="445" width="198" height="52"/>
+                                        <color key="backgroundColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="9B2-mc-jOV"/>
+                                            <constraint firstAttribute="width" constant="198" id="sbm-dD-Zg2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                                        <state key="normal" title="CONTINUAR">
+                                            <color key="titleColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="26"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
+                                                <color key="value" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="loadingColor">
+                                                <color key="value" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continueButtonTapped:" destination="Eyb-hZ-LcZ" eventType="touchUpInside" id="DO9-7l-uVd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="di2-Yi-mVd" secondAttribute="trailing" constant="10" id="RH9-Cx-pO9"/>
+                                    <constraint firstItem="di2-Yi-mVd" firstAttribute="leading" secondItem="BKa-2h-ubE" secondAttribute="leading" constant="10" id="yZZ-qI-5tK"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1C-Ay-fwt">
+                                <rect key="frame" x="16" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="3jd-P4-Q7q"/>
+                                    <constraint firstAttribute="width" constant="50" id="6Nk-Zw-nyf"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ttb-3a-ALa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="WA1-z1-mE1"/>
+                                </constraints>
+                                <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="icArrowBack-purple"/>
+                                <connections>
+                                    <action selector="goBackButtonTapped:" destination="Eyb-hZ-LcZ" eventType="touchUpInside" id="zEw-GU-vzQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="l1C-Ay-fwt" firstAttribute="leading" secondItem="Q9z-aS-7G3" secondAttribute="leading" constant="16" id="0OG-Ld-41A"/>
+                            <constraint firstItem="BKa-2h-ubE" firstAttribute="top" secondItem="A0q-qB-ih3" secondAttribute="top" constant="100" id="5VY-hm-yKP"/>
+                            <constraint firstItem="Q9z-aS-7G3" firstAttribute="bottom" secondItem="BKa-2h-ubE" secondAttribute="bottom" constant="70" id="JDA-In-JN6"/>
+                            <constraint firstItem="BKa-2h-ubE" firstAttribute="leading" secondItem="Q9z-aS-7G3" secondAttribute="leading" constant="20" id="S0l-qG-6pe"/>
+                            <constraint firstAttribute="trailing" secondItem="BKa-2h-ubE" secondAttribute="trailing" constant="20" id="X9p-RJ-iZZ"/>
+                            <constraint firstItem="l1C-Ay-fwt" firstAttribute="top" secondItem="Q9z-aS-7G3" secondAttribute="top" id="dyV-ep-Ajw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Q9z-aS-7G3"/>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="continueButton" destination="EWk-Sb-v0D" id="T3Y-Wl-MQk"/>
+                        <segue destination="gDC-gG-W50" kind="show" identifier="showAuthenticationProcess" id="jyu-A8-c3A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHM-HV-IXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1551" y="-825"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icArrowBack-purple" width="22" height="21"/>
+        <image name="ilustracionPolicia" width="180" height="150"/>
+        <image name="imageAccountFailed" width="388" height="308"/>
+    </resources>
+</document>

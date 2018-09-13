@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="azr-T8-zUs" customClass="NoTransactionsView" customModule="machApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="PVS-6e-nC5">
+                    <rect key="frame" x="44" y="333.5" width="287" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="PVS-6e-nC5" firstAttribute="centerY" secondItem="azr-T8-zUs" secondAttribute="centerY" id="2Va-BW-fSb"/>
+                <constraint firstItem="PVS-6e-nC5" firstAttribute="centerX" secondItem="azr-T8-zUs" secondAttribute="centerX" id="2q8-ak-cbN"/>
+                <constraint firstAttribute="trailing" secondItem="PVS-6e-nC5" secondAttribute="trailing" constant="44" id="EuG-d4-wcw"/>
+                <constraint firstItem="PVS-6e-nC5" firstAttribute="leading" secondItem="azr-T8-zUs" secondAttribute="leading" constant="44" id="pIf-Qp-83i"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="hQL-HM-8FV"/>
+            <connections>
+                <outlet property="messageLabel" destination="PVS-6e-nC5" id="vyZ-Jy-eEu"/>
+            </connections>
+        </view>
+    </objects>
+</document>

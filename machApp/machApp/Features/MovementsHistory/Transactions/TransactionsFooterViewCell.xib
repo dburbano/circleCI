@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="TransactionsFooterViewCell" customModule="machApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVO-Ty-9zM" userLabel="Separator">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="tV4-0U-Xq1"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDZ-nu-hFk">
+                        <rect key="frame" x="60" y="16.5" width="200" height="37"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzx-0H-hKG">
+                                <rect key="frame" x="0.0" y="0.0" width="163" height="37"/>
+                                <state key="normal" title="Alejandro Rodriguez"/>
+                                <connections>
+                                    <action selector="didPressChargeMore:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wGu-Rc-7VS"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Pm5-tw-uOt">
+                                <rect key="frame" x="163" y="0.0" width="37" height="37"/>
+                                <color key="color" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eDZ-nu-hFk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="44" id="1ve-53-ect"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eDZ-nu-hFk" secondAttribute="bottom" constant="5.5" id="CWK-pM-cel"/>
+                    <constraint firstItem="eDZ-nu-hFk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RTK-F1-quq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eDZ-nu-hFk" secondAttribute="trailing" constant="44" id="UFC-84-GFx"/>
+                    <constraint firstItem="eDZ-nu-hFk" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="guU-iA-7oG"/>
+                    <constraint firstItem="bVO-Ty-9zM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="firstBaseline" id="h5z-83-vx9"/>
+                    <constraint firstItem="bVO-Ty-9zM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="khA-kj-czw"/>
+                    <constraint firstAttribute="trailing" secondItem="bVO-Ty-9zM" secondAttribute="trailing" id="qR7-HR-a73"/>
+                    <constraint firstItem="eDZ-nu-hFk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5.5" id="xx3-QK-Nmv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="loadingIndicator" destination="Pm5-tw-uOt" id="RX4-BX-atJ"/>
+                <outlet property="messageButton" destination="Mzx-0H-hKG" id="Y1p-uT-WLD"/>
+                <outlet property="separatorView" destination="bVO-Ty-9zM" id="eS8-w9-OzV"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="59.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PermissionView" customModule="machApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qkD-cx-XBq" userLabel="ContainerView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fn-FG-Iuh" userLabel="ImageWrapper">
+                            <rect key="frame" x="34.5" y="25" width="250" height="197"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" image="ic_request_contacts" translatesAutoresizingMaskIntoConstraints="NO" id="t7s-1m-8lW">
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="197"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="0dM-9R-BWz"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="9eq-IB-y8L"/>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="ANN-wo-QgX"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="AjN-vk-JHb"/>
+                                <constraint firstAttribute="trailing" secondItem="t7s-1m-8lW" secondAttribute="trailing" id="Hsl-my-xkS"/>
+                                <constraint firstAttribute="bottom" secondItem="t7s-1m-8lW" secondAttribute="bottom" id="kjl-c0-XCQ"/>
+                                <constraint firstItem="t7s-1m-8lW" firstAttribute="leading" secondItem="6fn-FG-Iuh" secondAttribute="leading" id="q9q-Ja-B8o"/>
+                                <constraint firstItem="t7s-1m-8lW" firstAttribute="top" secondItem="6fn-FG-Iuh" secondAttribute="top" id="zvV-gA-QA6"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrL-Hy-5dd">
+                            <rect key="frame" x="80.5" y="433" width="159" height="52"/>
+                            <color key="backgroundColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="159" id="F2W-ir-DT9"/>
+                                <constraint firstAttribute="height" constant="52" id="tS5-8i-5i0" customClass="DeviceLayoutConstraint" customModule="DeviceLayout">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="inch5_5">
+                                            <integer key="value" value="60"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="inch4_7">
+                                            <integer key="value" value="52"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="inch4">
+                                            <integer key="value" value="40"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                            <state key="normal" title="ACEPTO">
+                                <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </state>
+                            <connections>
+                                <action selector="permissionAcceptedAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="YDn-av-rGS"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSH-IW-ZYg">
+                            <rect key="frame" x="116.5" y="505" width="88" height="33"/>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
+                            <state key="normal" title="No por ahora">
+                                <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="permissionCanceledAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="l44-18-XMl"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Necesitamos permiso para acceder a tu lista de contactos" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-Nw-Veh">
+                            <rect key="frame" x="30" y="247" width="260" height="46.5"/>
+                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                            <color key="textColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lw0-fr-KNi">
+                            <rect key="frame" x="30" y="313.5" width="260" height="109.5"/>
+                            <string key="text">MACH utiliza tu lista de contactos para hacer pagos y cobros de forma rápida entre tus amigos. Esta información no la compartimos con nadie.</string>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                            <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="GrL-Hy-5dd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lw0-fr-KNi" secondAttribute="bottom" constant="10" id="0AY-gu-BZb"/>
+                        <constraint firstItem="tYn-Nw-Veh" firstAttribute="top" secondItem="6fn-FG-Iuh" secondAttribute="bottom" constant="25" id="1Cf-bc-fI2" customClass="DeviceLayoutConstraint" customModule="DeviceLayout">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="inch4">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="inch4_7">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="inch5_5">
+                                    <real key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                        <constraint firstAttribute="trailing" secondItem="tYn-Nw-Veh" secondAttribute="trailing" constant="30" id="2Vt-dW-2gx"/>
+                        <constraint firstItem="lw0-fr-KNi" firstAttribute="leading" secondItem="qkD-cx-XBq" secondAttribute="leading" constant="30" id="2ky-RR-M5z"/>
+                        <constraint firstItem="tYn-Nw-Veh" firstAttribute="leading" secondItem="qkD-cx-XBq" secondAttribute="leading" constant="30" id="5sX-Rn-xhF"/>
+                        <constraint firstItem="GrL-Hy-5dd" firstAttribute="top" relation="lessThanOrEqual" secondItem="lw0-fr-KNi" secondAttribute="bottom" constant="150" id="9qJ-Z3-EeE"/>
+                        <constraint firstItem="6fn-FG-Iuh" firstAttribute="top" secondItem="qkD-cx-XBq" secondAttribute="top" constant="25" id="FUQ-SF-9hX"/>
+                        <constraint firstAttribute="trailing" secondItem="lw0-fr-KNi" secondAttribute="trailing" constant="30" id="XOk-D6-eOA"/>
+                        <constraint firstAttribute="bottom" secondItem="hSH-IW-ZYg" secondAttribute="bottom" constant="30" id="av4-gD-pWG"/>
+                        <constraint firstItem="lw0-fr-KNi" firstAttribute="top" secondItem="tYn-Nw-Veh" secondAttribute="bottom" constant="20" id="cCV-fc-fsv" customClass="DeviceLayoutConstraint" customModule="DeviceLayout">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="inch4">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="inch4_7">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="inch5_5">
+                                    <real key="value" value="30"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                        <constraint firstItem="hSH-IW-ZYg" firstAttribute="top" secondItem="GrL-Hy-5dd" secondAttribute="bottom" constant="20" id="db2-rp-heY"/>
+                        <constraint firstItem="GrL-Hy-5dd" firstAttribute="centerX" secondItem="qkD-cx-XBq" secondAttribute="centerX" id="pwa-v0-QTJ"/>
+                        <constraint firstItem="6fn-FG-Iuh" firstAttribute="centerX" secondItem="qkD-cx-XBq" secondAttribute="centerX" id="ua6-X5-fAO"/>
+                        <constraint firstItem="hSH-IW-ZYg" firstAttribute="centerX" secondItem="qkD-cx-XBq" secondAttribute="centerX" id="vjt-vL-paq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="qkD-cx-XBq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HKB-vZ-Tuh"/>
+                <constraint firstItem="qkD-cx-XBq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="h02-09-tpU"/>
+                <constraint firstAttribute="bottom" secondItem="qkD-cx-XBq" secondAttribute="bottom" id="qWe-5F-Qbz"/>
+                <constraint firstAttribute="trailing" secondItem="qkD-cx-XBq" secondAttribute="trailing" id="s1N-Nq-BwJ"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <connections>
+                <outlet property="acceptButton" destination="GrL-Hy-5dd" id="9ef-CD-yN7"/>
+                <outlet property="bottomConstraint" destination="qWe-5F-Qbz" id="dzT-KB-hEF"/>
+                <outlet property="containerView" destination="qkD-cx-XBq" id="Mfu-sd-xyW"/>
+                <outlet property="imageWrapper" destination="6fn-FG-Iuh" id="bHR-sz-Azv"/>
+                <outlet property="leadingConstraint" destination="HKB-vZ-Tuh" id="VHr-nX-OX6"/>
+                <outlet property="perimissionTitleLabel" destination="tYn-Nw-Veh" id="7lL-LX-STI"/>
+                <outlet property="permissionDescriptionLabel" destination="lw0-fr-KNi" id="2ya-wm-c6O"/>
+                <outlet property="permissionImage" destination="t7s-1m-8lW" id="yTZ-2Z-4fs"/>
+                <outlet property="topConstraint" destination="h02-09-tpU" id="kyU-xO-JRX"/>
+                <outlet property="trailingConstraint" destination="s1N-Nq-BwJ" id="rb6-GR-bul"/>
+            </connections>
+            <point key="canvasLocation" x="28" y="9"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_request_contacts" width="338" height="290"/>
+    </resources>
+</document>

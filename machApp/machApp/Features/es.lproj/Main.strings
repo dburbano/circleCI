@@ -1,0 +1,108 @@
+
+/* Class = "UIButton"; normalTitle = "CERRAR"; ObjectID = "11d-qt-yxg"; */
+"11d-qt-yxg.normalTitle" = "CERRAR";
+
+/* Class = "UITabBarItem"; title = "Pagar"; ObjectID = "2kC-lK-bTM"; */
+"2kC-lK-bTM.title" = "Pagar";
+
+/* Class = "UILabel"; text = "Cobra y paga a tus amigos"; ObjectID = "3i4-Ga-3jm"; */
+"3i4-Ga-3jm.text" = "Cobra y paga a tus amigos";
+
+/* Class = "UILabel"; text = "Términos y Condiciones"; ObjectID = "57n-Uh-tNZ"; */
+"57n-Uh-tNZ.text" = "Términos y Condiciones";
+
+/* Class = "UILabel"; text = "Número de \ndocumento"; ObjectID = "7x5-s3-MF0"; */
+"7x5-s3-MF0.text" = "Número de \ndocumento";
+
+/* Class = "UIButton"; normalTitle = "CONTINUAR"; ObjectID = "Bh0-BH-pCi"; */
+"Bh0-BH-pCi.normalTitle" = "CONTINUAR";
+
+/* Class = "UILabel"; text = "En el carnet nuevo"; ObjectID = "DQ3-kp-u3a"; */
+"DQ3-kp-u3a.text" = "En el carnet nuevo";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "DT0-R9-2pX"; */
+"DT0-R9-2pX.title" = "Home";
+
+/* Class = "UIButton"; normalTitle = "No por ahora"; ObjectID = "FQa-sL-dh5"; */
+"FQa-sL-dh5.normalTitle" = "No por ahora";
+
+/* Class = "UIButton"; normalTitle = "Ingresa aquí"; ObjectID = "G89-Sv-fhf"; */
+"G89-Sv-fhf.normalTitle" = "Ingresa aquí";
+
+/* Class = "UILabel"; text = "¿Ya tienes una cuenta?"; ObjectID = "GGV-UX-mfs"; */
+"GGV-UX-mfs.text" = "¿Ya tienes una cuenta?";
+
+/* Class = "UILabel"; text = "Ej. nombre@correo.com"; ObjectID = "KGX-er-2NL"; */
+"KGX-er-2NL.text" = "Ej. nombre@correo.com";
+
+/* Class = "UILabel"; text = "Número de \nserie en el dorso"; ObjectID = "KJK-iM-Tpw"; */
+"KJK-iM-Tpw.text" = "Número de \nserie en el dorso";
+
+/* Class = "UILabel"; text = "Carnet de identitdad"; ObjectID = "KuS-Ej-aq4"; */
+"KuS-Ej-aq4.text" = "Carnet de identitdad";
+
+/* Class = "UITextField"; placeholder = "Nombre"; ObjectID = "NkE-Rj-8Km"; */
+"NkE-Rj-8Km.placeholder" = "Nombre";
+
+/* Class = "UITextField"; placeholder = "Apellido"; ObjectID = "NoA-KT-K1v"; */
+"NoA-KT-K1v.placeholder" = "Apellido";
+
+/* Class = "UITabBarItem"; title = "Cobrar"; ObjectID = "Tjs-dg-CiS"; */
+"Tjs-dg-CiS.title" = "Cobrar";
+
+/* Class = "UITextField"; placeholder = "Rut"; ObjectID = "VO9-hV-6fv"; */
+"VO9-hV-6fv.placeholder" = "Rut";
+
+/* Class = "UILabel"; text = "Al aceptar declaro que debo pagar impuestos sólo en Chile. Cambiar"; ObjectID = "VZz-aP-c1e"; */
+"VZz-aP-c1e.text" = "Al aceptar declaro que debo pagar impuestos sólo en Chile. Cambiar";
+
+/* Class = "UILabel"; text = "No se ha podido verificar la identidad. Intenta nuevamente con una cédula de identidad válida."; ObjectID = "WWM-Wf-Uhj"; */
+"WWM-Wf-Uhj.text" = "No se ha podido verificar la identidad. Intenta nuevamente con una cédula de identidad válida.";
+
+/* Class = "UIButton"; normalTitle = "ACEPTO"; ObjectID = "Wgf-56-MC3"; */
+"Wgf-56-MC3.normalTitle" = "ACEPTO";
+
+/* Class = "UILabel"; text = "¡Hola Nicolás!"; ObjectID = "akC-eE-fFR"; */
+"akC-eE-fFR.text" = "¡Hola Nicolás!";
+
+/* Class = "UITextField"; placeholder = "Correo electrónico"; ObjectID = "bK4-yK-V2O"; */
+"bK4-yK-V2O.placeholder" = "Correo electrónico";
+
+/* Class = "UILabel"; text = "En el carnet antiguo"; ObjectID = "blM-4L-5s7"; */
+"blM-4L-5s7.text" = "En el carnet antiguo";
+
+/* Class = "UILabel"; text = "Powered by"; ObjectID = "bni-Bh-qx5"; */
+"bni-Bh-qx5.text" = "Powered by";
+
+/* Class = "UILabel"; text = "Donde encontrar tu número de documento / serie"; ObjectID = "cRJ-nD-qtt"; */
+"cRJ-nD-qtt.text" = "Donde encontrar tu número de documento / serie";
+
+/* Class = "UIButton"; normalTitle = "CONTINUAR"; ObjectID = "eI1-bO-yFb"; */
+"eI1-bO-yFb.normalTitle" = "CONTINUAR";
+
+/* Class = "UIButton"; normalTitle = "¿No encuentras tu número de documento?"; ObjectID = "eVc-2v-57m"; */
+"eVc-2v-57m.normalTitle" = "¿No encuentras tu número de documento?";
+
+/* Class = "UILabel"; text = "Ingresa un RUT válido"; ObjectID = "fKQ-rl-afN"; */
+"fKQ-rl-afN.text" = "Ingresa un RUT válido";
+
+/* Class = "UILabel"; text = "Bienvenido, ¿Cómo te llamas?"; ObjectID = "grB-pN-8cU"; */
+"grB-pN-8cU.text" = "Bienvenido, ¿Cómo te llamas?";
+
+/* Class = "UIButton"; normalTitle = "CONTINUAR"; ObjectID = "hRt-c0-JoA"; */
+"hRt-c0-JoA.normalTitle" = "CONTINUAR";
+
+/* Class = "UITextField"; placeholder = "Número de Documento"; ObjectID = "hwJ-4H-0R8"; */
+"hwJ-4H-0R8.placeholder" = "Número de Documento";
+
+/* Class = "UILabel"; text = "Sólo necesitas tu carnet"; ObjectID = "irW-qe-wi8"; */
+"irW-qe-wi8.text" = "Sólo necesitas tu carnet";
+
+/* Class = "UIButton"; normalTitle = "CREA TU CUENTA"; ObjectID = "lmf-55-1JD"; */
+"lmf-55-1JD.normalTitle" = "CREA TU CUENTA";
+
+/* Class = "UILabel"; text = "¿Cómo quieres que te vean?"; ObjectID = "rOY-er-i0a"; */
+"rOY-er-i0a.text" = "¿Cómo quieres que te vean?";
+
+/* Class = "UITabBarItem"; title = "Recargar"; ObjectID = "uzk-fK-ZUT"; */
+"uzk-fK-ZUT.title" = "Recargar";

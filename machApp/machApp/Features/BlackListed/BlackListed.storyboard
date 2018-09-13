@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XuN-SY-K3b">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Black Listed View Controller-->
+        <scene sceneID="MEP-Fp-3ti">
+            <objects>
+                <viewController storyboardIdentifier="BlackListedViewController" hidesBottomBarWhenPushed="YES" id="XuN-SY-K3b" customClass="BlackListedViewController" customModule="machApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zp2-Cl-5j6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ilustracionCuentaBloqueada" translatesAutoresizingMaskIntoConstraints="NO" id="1Ks-Kt-hGz">
+                                <rect key="frame" x="119.33333333333331" y="80" width="175" height="139"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lo sentimos, tu cuenta ha sido bloqueada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kd-68-KbY">
+                                <rect key="frame" x="37.666666666666657" y="279" width="339" height="57.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="21"/>
+                                <color key="textColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Si quieres saber más o crees que esto fue un error entra aquí" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVC-ts-cBl" customClass="ActiveLabel" customModule="ActiveLabel">
+                                <rect key="frame" x="37" y="396.33333333333331" width="339" height="22"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                                <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Ks-Kt-hGz" firstAttribute="centerX" secondItem="Zp2-Cl-5j6" secondAttribute="centerX" id="8a4-1z-z4b"/>
+                            <constraint firstItem="nfD-C6-jFt" firstAttribute="trailing" secondItem="YVC-ts-cBl" secondAttribute="trailing" constant="38" id="9hE-rU-5Vx"/>
+                            <constraint firstItem="YVC-ts-cBl" firstAttribute="top" secondItem="4Kd-68-KbY" secondAttribute="bottom" constant="60" id="GEe-Xp-8zC" customClass="DeviceLayoutConstraint" customModule="machApp" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone4">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone5">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone6">
+                                        <real key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone6Plus">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="4Kd-68-KbY" firstAttribute="top" secondItem="1Ks-Kt-hGz" secondAttribute="bottom" constant="60" id="HDK-rM-dHq" customClass="DeviceLayoutConstraint" customModule="machApp" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone4">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone5">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone6">
+                                        <real key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone6Plus">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="4Kd-68-KbY" firstAttribute="leading" secondItem="nfD-C6-jFt" secondAttribute="leading" constant="37.5" id="Koh-8j-lTr"/>
+                            <constraint firstItem="1Ks-Kt-hGz" firstAttribute="top" secondItem="nfD-C6-jFt" secondAttribute="top" constant="60" id="MV7-tu-1MW" customClass="DeviceLayoutConstraint" customModule="machApp" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone4">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iphone6Plus">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="YVC-ts-cBl" firstAttribute="leading" secondItem="nfD-C6-jFt" secondAttribute="leading" constant="37" id="pJB-4u-mAZ"/>
+                            <constraint firstItem="nfD-C6-jFt" firstAttribute="trailing" secondItem="4Kd-68-KbY" secondAttribute="trailing" constant="37.5" id="tmJ-S4-iJn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nfD-C6-jFt"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="informationLabel" destination="YVC-ts-cBl" id="erf-yf-0EZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SRu-t9-LoD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="104"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ilustracionCuentaBloqueada" width="175" height="139"/>
+    </resources>
+</document>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>934836642720-9dv0v2v7mg7h7v0dhtu0t61g2di38ko1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.934836642720-9dv0v2v7mg7h7v0dhtu0t61g2di38ko1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCPrp2Jg6Qs51GYScQ3UWm5oPzcyFpR89A</string>
+	<key>GCM_SENDER_ID</key>
+	<string>934836642720</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sismo.mach</string>
+	<key>PROJECT_ID</key>
+	<string>sismo-147112</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sismo-147112.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:934836642720:ios:1f300fedc4fa84e5</string>
+	<key>DATABASE_URL</key>
+	<string>https://sismo-147112.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentSentCell" rowHeight="205" id="j4V-GP-zhG" customClass="PaymentSentTableViewCell" customModule="machApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="445" height="195"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j4V-GP-zhG" id="n6t-Ss-MfR">
+                <rect key="frame" x="0.0" y="0.0" width="445" height="194.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AxJ-Ry-0Ji">
+                        <rect key="frame" x="64" y="5" width="375" height="185.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_balloon_chat_right" translatesAutoresizingMaskIntoConstraints="NO" id="jV5-CZ-sCA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
+                                <rect key="contentStretch" x="0.5" y="0.5" width="0.0" height="0.0"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMa-sP-ivg" userLabel="Color View">
+                                <rect key="frame" x="4" y="20" width="3" height="52"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="3" id="Ajb-xq-AJE"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uoc-eZ-FUf">
+                                <rect key="frame" x="28" y="20" width="324" height="144.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8hQ-lh-pQ9">
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="52"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enviaste un pago por" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ZjF-bg-x8o">
+                                                <rect key="frame" x="0.0" y="0.0" width="324" height="19"/>
+                                                <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
+                                                <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="$5.000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="nki-e6-iDP">
+                                                <rect key="frame" x="0.0" y="19" width="324" height="33"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="28"/>
+                                                <color key="textColor" red="0.98431372549999996" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxx-GB-Eld">
+                                        <rect key="frame" x="0.0" y="67" width="324" height="1"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="NpX-eO-W7g"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KEK-Zc-6ob">
+                                        <rect key="frame" x="0.0" y="82.5" width="324" height="16.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_near_gray" translatesAutoresizingMaskIntoConstraints="NO" id="c0N-Cg-lAJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="11"/>
+                                                <color key="tintColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10.800000000000001" id="0m6-3z-ZBL"/>
+                                                    <constraint firstAttribute="width" constant="10.800000000000001" id="7dW-vo-wzN"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Ahí está lo que te debía del almuerzo, gracias&quot;" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="DlC-oI-Zvv">
+                                                <rect key="frame" x="-92" y="0.0" width="0.0" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                                                <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="YHi-RN-7z7">
+                                                <rect key="frame" x="-92" y="0.0" width="0.0" height="14"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="foR-Sm-k1u" userLabel="Reaction Stack View">
+                                        <rect key="frame" x="0.0" y="114" width="324" height="30.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7QO-uv-aEB">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="30.5"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reaction_1" translatesAutoresizingMaskIntoConstraints="NO" id="PQg-wf-5nP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="30.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="25" id="9z4-HF-ndm"/>
+                                                            <constraint firstAttribute="width" secondItem="PQg-wf-5nP" secondAttribute="height" multiplier="45.5:55.5" id="EOM-8c-bnP"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qué rápido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U49-Dw-IgD">
+                                                        <rect key="frame" x="30" y="8.5" width="60" height="14"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                                        <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uoc-eZ-FUf" firstAttribute="leading" secondItem="AxJ-Ry-0Ji" secondAttribute="leading" constant="28" id="3iy-5I-IRC"/>
+                            <constraint firstItem="tMa-sP-ivg" firstAttribute="height" secondItem="8hQ-lh-pQ9" secondAttribute="height" id="JZH-Ds-yWh"/>
+                            <constraint firstAttribute="bottom" secondItem="uoc-eZ-FUf" secondAttribute="bottom" constant="21" id="RR9-Kc-ZGC"/>
+                            <constraint firstAttribute="trailing" secondItem="jV5-CZ-sCA" secondAttribute="trailing" id="Tz3-SF-v4l"/>
+                            <constraint firstItem="jV5-CZ-sCA" firstAttribute="top" secondItem="AxJ-Ry-0Ji" secondAttribute="top" id="gFw-1b-Hp0"/>
+                            <constraint firstItem="jV5-CZ-sCA" firstAttribute="leading" secondItem="AxJ-Ry-0Ji" secondAttribute="leading" id="gJp-k1-ndd"/>
+                            <constraint firstItem="tMa-sP-ivg" firstAttribute="top" secondItem="8hQ-lh-pQ9" secondAttribute="top" id="pJm-lK-91g"/>
+                            <constraint firstItem="tMa-sP-ivg" firstAttribute="leading" secondItem="jV5-CZ-sCA" secondAttribute="leading" constant="4" id="pMP-7H-BLh"/>
+                            <constraint firstAttribute="trailing" secondItem="uoc-eZ-FUf" secondAttribute="trailing" constant="23" id="vh7-kk-Zq5"/>
+                            <constraint firstItem="uoc-eZ-FUf" firstAttribute="top" secondItem="AxJ-Ry-0Ji" secondAttribute="top" constant="20" id="z6e-xy-8Fz"/>
+                            <constraint firstAttribute="bottom" secondItem="jV5-CZ-sCA" secondAttribute="bottom" constant="1" id="zGA-eJ-fZp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AxJ-Ry-0Ji" firstAttribute="top" secondItem="n6t-Ss-MfR" secondAttribute="top" constant="5" id="JwZ-eU-Rhg"/>
+                    <constraint firstAttribute="bottom" secondItem="AxJ-Ry-0Ji" secondAttribute="bottom" constant="4" id="cPt-Ov-Zpz"/>
+                    <constraint firstAttribute="trailing" secondItem="AxJ-Ry-0Ji" secondAttribute="trailing" constant="6" id="tJg-br-2wC"/>
+                    <constraint firstItem="AxJ-Ry-0Ji" firstAttribute="leading" secondItem="n6t-Ss-MfR" secondAttribute="leading" constant="64" id="v7u-lx-6NV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="amountLabel" destination="nki-e6-iDP" id="GeC-kt-Btn"/>
+                <outlet property="hourLabel" destination="YHi-RN-7z7" id="gj5-Uv-fVe"/>
+                <outlet property="interactionImageView" destination="PQg-wf-5nP" id="yhD-ep-Vvf"/>
+                <outlet property="interactionLabel" destination="U49-Dw-IgD" id="oKj-lq-5Tm"/>
+                <outlet property="interactionStackView" destination="foR-Sm-k1u" id="wLo-tQ-pZ3"/>
+                <outlet property="messageLabel" destination="DlC-oI-Zvv" id="tA0-Sg-Rdn"/>
+                <outlet property="nearTransactionImageView" destination="c0N-Cg-lAJ" id="0DU-1P-3WO"/>
+            </connections>
+            <point key="canvasLocation" x="-483.5" y="-615.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bg_balloon_chat_right" width="55" height="51"/>
+        <image name="ic_near_gray" width="11" height="11"/>
+        <image name="reaction_1" width="130" height="160"/>
+    </resources>
+</document>

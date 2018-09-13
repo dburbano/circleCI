@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Light.ttf">
+            <string>Nunito-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Passcode View Controller-->
+        <scene sceneID="W8A-Pm-bJm">
+            <objects>
+                <viewController storyboardIdentifier="PasscodeViewController" id="ehP-1y-sry" customClass="PasscodeViewController" customModule="machApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleAspectFill" id="uue-3p-bkd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Ingresa tu PIN para confirmar el pago" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dpY-C8-EQ6">
+                                <rect key="frame" x="60" y="60" width="255" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="c2X-f2-AzU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="19.399999618530273"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tLq-wq-Dj9" userLabel="Placeholders stackview">
+                                <rect key="frame" x="127.5" y="133" width="120" height="15"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsy-Eb-iJ7" customClass="PasscodePlaceholderView" customModule="machApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="Qa3-wg-e1c"/>
+                                            <constraint firstAttribute="width" secondItem="Jsy-Eb-iJ7" secondAttribute="height" multiplier="1:1" id="SOr-CK-nib"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="activeImage" value="letter-mach-M"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMh-rw-MeE" customClass="PasscodePlaceholderView" customModule="machApp" customModuleProvider="target">
+                                        <rect key="frame" x="35" y="0.0" width="15" height="15"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="uMh-rw-MeE" secondAttribute="height" multiplier="1:1" id="gqn-vN-HBY"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="activeImage" value="letter-mach-A"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReZ-we-BJy" customClass="PasscodePlaceholderView" customModule="machApp" customModuleProvider="target">
+                                        <rect key="frame" x="70" y="0.0" width="15" height="15"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ReZ-we-BJy" secondAttribute="height" multiplier="1:1" id="MkT-uF-5U3"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="activeImage" value="letter-mach-C"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LC7-ic-XzJ" customClass="PasscodePlaceholderView" customModule="machApp" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="0.0" width="15" height="15"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="LC7-ic-XzJ" secondAttribute="height" multiplier="1:1" id="ZcR-mE-cBz"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="activeImage" value="letter-mach-H"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Haz ingresado un pin incorrecto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="DlZ-4A-mtd" customClass="BorderLabel" customModule="machApp" customModuleProvider="target">
+                                <rect key="frame" x="83" y="163" width="209.5" height="20.5"/>
+                                <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftTextInset">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightTextInset">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rYn-Ji-CVv" userLabel="Digits stackview">
+                                <rect key="frame" x="60" y="198.5" width="255" height="458.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="lof-wd-dX0">
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="83.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHh-SJ-HAg" customClass="PasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="51.5" height="83.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="47"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="1"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
+                                                        <color key="value" red="0.59210421950000003" green="0.59210421950000003" blue="0.59210421950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.49622752570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="ehP-1y-sry" eventType="touchUpInside" id="Y92-oP-cdL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg4-PY-ghq" customClass="PasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="101.5" y="0.0" width="52" height="83.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="47"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="2"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
+                                                        <color key="value" red="0.59210421950000003" green="0.59210421950000003" blue="0.59210421950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.49622752570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="ehP-1y-sry" eventType="touchUpInside" id="u2d-sB-Ems"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxT-Sw-Z8Y" customClass="PasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="203.5" y="0.0" width="51.5" height="83.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="47"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="3"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
+                                                        <color key="value" red="0.59210421950000003" green="0.59210421950000003" blue="0.59210421950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.49622752570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="ehP-1y-sry" eventType="touchUpInside" id="HRi-h9-L4D"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="RAb-9I-k6G">
+                                        <rect key="frame" x="0.0" y="93.5" width="255" height="84"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPY-Y5-WAn" customClass="PasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="51.5" height="84"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="47"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="4"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
+                                                        <color key="value" red="0.59210421950000003" green="0.59210421950000003" blue="0.59210421950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.49622752570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="ehP-1y-sry" eventType="touchUpInside" id="l3m-qh-X5A"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbd-Lk-a1Z" customClass="PasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="101.5" y="0.0" width="52" height="84"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="47"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="5"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
+                                                        <color key="value" red="0.59210421950000003" green="0.59210421950000003" blue="0.59210421950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.49622752570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="ehP-1y-sry" eventType="touchUpInside" id="J9v-qq-TOO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztb-Tp-rwG" customClass="PasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="203.5" y="0.0" width="51.5" height="84"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="47"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="6"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
+                                                        <color key="value" red="0.59210421950000003" green="0.59210421950000003" blue="0.59210421950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.49622752570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="ehP-1y-sry" eventType="touchUpInside" id="iFa-Ro-Qzh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="77v-4e-Wqu">
+                                        <rect key="frame" x="0.0" y="187.5" width="255" height="83.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2U-ZL-40o" customClass="PasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="51.5" height="83.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="47"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="7"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
+                                                        <color key="value" red="0.59210421950000003" green="0.59210421950000003" blue="0.59210421950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.49622752570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="ehP-1y-sry" eventType="touchUpInside" id="tX0-ql-dys"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soQ-bZ-Urv" customClass="PasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="101.5" y="0.0" width="52" height="83.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="47"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="8"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
+                                                        <color key="value" red="0.59210421950000003" green="0.59210421950000003" blue="0.59210421950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.49622752570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="ehP-1y-sry" eventType="touchUpInside" id="2h5-fK-dFr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfV-La-xdC" customClass="PasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="203.5" y="0.0" width="51.5" height="83.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="47"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="9"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
+                                                        <color key="value" red="0.59210421950000003" green="0.59210421950000003" blue="0.59210421950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.49622752570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="ehP-1y-sry" eventType="touchUpInside" id="dnp-LR-eV5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Slf-UL-BOJ">
+                                        <rect key="frame" x="0.0" y="281" width="255" height="84"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3R8-F8-d4p" customClass="PasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="51.5" height="84"/>
+                                                <state key="normal" image="icPINDelete"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="0"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
+                                                        <color key="value" red="0.59210421950000003" green="0.59210421950000003" blue="0.59210421950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.49622752570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deleteButtonTap:" destination="ehP-1y-sry" eventType="touchUpInside" id="jqa-hy-VLX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7D-iM-0s5" customClass="PasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="101.5" y="0.0" width="52" height="84"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="47"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="0"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
+                                                        <color key="value" red="0.59210421950000003" green="0.59210421950000003" blue="0.59210421950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.49622752570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="ehP-1y-sry" eventType="touchUpInside" id="lLC-Nd-Boz"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZm-9v-YoJ">
+                                                <rect key="frame" x="203.5" y="0.0" width="51.5" height="84"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5G-xb-V0g">
+                                                        <rect key="frame" x="7.5" y="22" width="36" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="V5G-xb-V0g" secondAttribute="height" multiplier="29:32" id="upn-Tm-kyU"/>
+                                                        </constraints>
+                                                        <state key="normal" image="finger"/>
+                                                        <connections>
+                                                            <action selector="touchIDButtonTapWithSender:" destination="ehP-1y-sry" eventType="touchUpInside" id="cN1-gL-G41"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="V5G-xb-V0g" firstAttribute="centerY" secondItem="yZm-9v-YoJ" secondAttribute="centerY" id="2Gs-Qy-pHe"/>
+                                                    <constraint firstItem="V5G-xb-V0g" firstAttribute="width" secondItem="yZm-9v-YoJ" secondAttribute="width" multiplier="0.7" id="OMC-rG-Ngv"/>
+                                                    <constraint firstItem="V5G-xb-V0g" firstAttribute="centerX" secondItem="yZm-9v-YoJ" secondAttribute="centerX" id="V7Z-8K-jEM"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpT-eu-qkw">
+                                        <rect key="frame" x="0.0" y="375" width="255" height="83.5"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="19.399999618530273"/>
+                                        <state key="normal" title="Cancelar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="optionButtonTapped:" destination="ehP-1y-sry" eventType="touchUpInside" id="ug8-jj-EdM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DlZ-4A-mtd" firstAttribute="centerX" secondItem="uue-3p-bkd" secondAttribute="centerX" id="00y-8j-Dkg"/>
+                            <constraint firstAttribute="bottom" secondItem="rYn-Ji-CVv" secondAttribute="bottom" constant="10" id="7lf-up-Gng"/>
+                            <constraint firstItem="DlZ-4A-mtd" firstAttribute="top" secondItem="tLq-wq-Dj9" secondAttribute="bottom" constant="15" id="Ekm-7n-43U"/>
+                            <constraint firstItem="rYn-Ji-CVv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DlZ-4A-mtd" secondAttribute="bottom" constant="15" id="Es6-bM-YSW"/>
+                            <constraint firstItem="dpY-C8-EQ6" firstAttribute="centerX" secondItem="uue-3p-bkd" secondAttribute="centerX" id="Gc5-y5-mC3"/>
+                            <constraint firstItem="rYn-Ji-CVv" firstAttribute="centerX" secondItem="uue-3p-bkd" secondAttribute="centerX" id="HLA-ka-iGt"/>
+                            <constraint firstItem="rYn-Ji-CVv" firstAttribute="leading" secondItem="uue-3p-bkd" secondAttribute="leading" constant="60" id="N9a-wV-v5n"/>
+                            <constraint firstItem="dpY-C8-EQ6" firstAttribute="top" secondItem="uue-3p-bkd" secondAttribute="top" constant="60" id="Pnh-Ty-flu"/>
+                            <constraint firstItem="tLq-wq-Dj9" firstAttribute="top" secondItem="dpY-C8-EQ6" secondAttribute="bottom" constant="20" id="RGm-vb-V2d"/>
+                            <constraint firstItem="tLq-wq-Dj9" firstAttribute="centerX" secondItem="uue-3p-bkd" secondAttribute="centerX" id="TeB-cu-LNT"/>
+                            <constraint firstAttribute="trailing" secondItem="rYn-Ji-CVv" secondAttribute="trailing" constant="60" id="bED-wM-Plp"/>
+                            <constraint firstItem="dpY-C8-EQ6" firstAttribute="width" secondItem="rYn-Ji-CVv" secondAttribute="width" id="k0c-80-Pmc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PS3-eI-C72"/>
+                    </view>
+                    <connections>
+                        <outlet property="deleteSignButton" destination="3R8-F8-d4p" id="1lv-QP-T4Y"/>
+                        <outlet property="errorLabel" destination="DlZ-4A-mtd" id="c9B-40-XdS"/>
+                        <outlet property="optionButton" destination="EpT-eu-qkw" id="1Yz-GS-ycb"/>
+                        <outlet property="placeholdersX" destination="TeB-cu-LNT" id="Lec-wc-05l"/>
+                        <outlet property="titleLabel" destination="dpY-C8-EQ6" id="Q1p-wz-5sl"/>
+                        <outlet property="touchIdBtn" destination="V5G-xb-V0g" id="eps-IZ-fdR"/>
+                        <outletCollection property="placeholders" destination="Jsy-Eb-iJ7" collectionClass="NSMutableArray" id="jFy-Z2-pIi"/>
+                        <outletCollection property="placeholders" destination="uMh-rw-MeE" collectionClass="NSMutableArray" id="J9u-oq-s1T"/>
+                        <outletCollection property="placeholders" destination="ReZ-we-BJy" collectionClass="NSMutableArray" id="f9R-JE-0km"/>
+                        <outletCollection property="placeholders" destination="LC7-ic-XzJ" collectionClass="NSMutableArray" id="TyL-Ne-4o1"/>
+                        <outletCollection property="passcodeButtons" destination="jHh-SJ-HAg" collectionClass="NSMutableArray" id="Q2Z-rc-WLD"/>
+                        <outletCollection property="passcodeButtons" destination="Kg4-PY-ghq" collectionClass="NSMutableArray" id="2Q2-HJ-CFR"/>
+                        <outletCollection property="passcodeButtons" destination="MxT-Sw-Z8Y" collectionClass="NSMutableArray" id="ZBP-n8-pa4"/>
+                        <outletCollection property="passcodeButtons" destination="uPY-Y5-WAn" collectionClass="NSMutableArray" id="Urr-s5-KG7"/>
+                        <outletCollection property="passcodeButtons" destination="xbd-Lk-a1Z" collectionClass="NSMutableArray" id="unW-pv-Sye"/>
+                        <outletCollection property="passcodeButtons" destination="Ztb-Tp-rwG" collectionClass="NSMutableArray" id="49a-Yv-gni"/>
+                        <outletCollection property="passcodeButtons" destination="W2U-ZL-40o" collectionClass="NSMutableArray" id="N3M-f8-MLg"/>
+                        <outletCollection property="passcodeButtons" destination="soQ-bZ-Urv" collectionClass="NSMutableArray" id="c9i-ly-RJJ"/>
+                        <outletCollection property="passcodeButtons" destination="QfV-La-xdC" collectionClass="NSMutableArray" id="Xer-z1-Bpq"/>
+                        <outletCollection property="passcodeButtons" destination="A7D-iM-0s5" collectionClass="NSMutableArray" id="nV5-YN-Iy6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZV-I0-rSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="62" y="100"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="finger" width="29" height="32"/>
+        <image name="icPINDelete" width="37" height="25"/>
+        <image name="letter-mach-A" width="28" height="29"/>
+        <image name="letter-mach-C" width="25" height="29"/>
+        <image name="letter-mach-H" width="24" height="29"/>
+        <image name="letter-mach-M" width="29" height="29"/>
+    </resources>
+</document>

@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lHa-g3-M93">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Light.ttf">
+            <string>Nunito-Light</string>
+        </array>
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Generate PIN Number View Controller-->
+        <scene sceneID="R6x-Mv-JM5">
+            <objects>
+                <viewController storyboardIdentifier="GeneratePINNumberViewController" extendedLayoutIncludesOpaqueBars="YES" hidesBottomBarWhenPushed="YES" id="lHa-g3-M93" userLabel="Generate PIN Number View Controller" customClass="GeneratePINNumberViewController" customModule="machApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ga0-B9-oFV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHm-zU-kBr" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="77"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pig-Ag-rtf">
+                                        <rect key="frame" x="20" y="25" width="345" height="22"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ia7-8T-3Wc">
+                                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="22" id="5Lu-K8-pty"/>
+                                                    <constraint firstAttribute="height" constant="22" id="EMv-vy-Nhl"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="icArrowBack-purple"/>
+                                                <connections>
+                                                    <action selector="backButtonTap:" destination="lHa-g3-M93" eventType="touchUpInside" id="lMs-5y-wVv"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Crea tu PIN de seguridad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="P77-gH-9bT" userLabel="title-label">
+                                                <rect key="frame" x="32" y="0.0" width="313" height="22"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="21"/>
+                                                <color key="textColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OeD-i4-Bd5" customClass="ProgressBarView" customModule="machApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="75" width="240" height="2"/>
+                                        <color key="backgroundColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="5fu-kM-1Vn"/>
+                                            <constraint firstAttribute="height" constant="2" id="Riv-xW-F7t"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="currentStep">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="totalSteps">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="OeD-i4-Bd5" secondAttribute="bottom" id="F9w-o2-Uix"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pig-Ag-rtf" secondAttribute="trailing" constant="10" id="LGx-iF-myM"/>
+                                    <constraint firstItem="Pig-Ag-rtf" firstAttribute="top" secondItem="SHm-zU-kBr" secondAttribute="top" constant="25" id="anf-2p-lWz"/>
+                                    <constraint firstItem="Pig-Ag-rtf" firstAttribute="leading" secondItem="SHm-zU-kBr" secondAttribute="leading" constant="20" id="ojf-QE-LRi"/>
+                                    <constraint firstItem="OeD-i4-Bd5" firstAttribute="leading" secondItem="SHm-zU-kBr" secondAttribute="leading" id="pMK-78-fCV"/>
+                                    <constraint firstAttribute="height" constant="77" id="ug0-s2-XYq"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Crea un código personal de seguridad de 4 números para ingresar a MACH" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-PA-2h7">
+                                <rect key="frame" x="26" y="112" width="323" height="44"/>
+                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="16"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Jx-6h-0fm" userLabel="Holders Stack">
+                                <rect key="frame" x="127.5" y="192" width="120" height="15"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Vgy-qg-Wmo" customClass="SignPasscodePlaceholderView" customModule="machApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Vgy-qg-Wmo" secondAttribute="height" multiplier="1:1" id="Gy5-cI-x9i"/>
+                                            <constraint firstAttribute="height" constant="15" id="OkW-D4-Tz4"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="activeImage" value="icPINDOT-purp"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="inactiveImage" value="icPINDOT-gray"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="pHP-e3-Anr" customClass="SignPasscodePlaceholderView" customModule="machApp" customModuleProvider="target">
+                                        <rect key="frame" x="35" y="0.0" width="15" height="15"/>
+                                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="pHP-e3-Anr" secondAttribute="height" multiplier="1:1" id="Rg9-DV-F2V"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="activeImage" value="icPINDOT-purp"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="inactiveImage" value="icPINDOT-gray"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="wmy-WO-M3a" customClass="SignPasscodePlaceholderView" customModule="machApp" customModuleProvider="target">
+                                        <rect key="frame" x="70" y="0.0" width="15" height="15"/>
+                                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wmy-WO-M3a" secondAttribute="height" multiplier="1:1" id="wnV-gt-5L8"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="inactiveImage" value="icPINDOT-gray"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="activeImage" value="icPINDOT-purp"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="SM4-9X-qPT" customClass="SignPasscodePlaceholderView" customModule="machApp" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="0.0" width="15" height="15"/>
+                                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="SM4-9X-qPT" secondAttribute="height" multiplier="1:1" id="dOx-f9-4Gp"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="inactiveImage" value="icPINDOT-gray"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="activeImage" value="icPINDOT-purp"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wmy-WO-M3a" firstAttribute="width" secondItem="pHP-e3-Anr" secondAttribute="width" id="E4l-aD-Ntz"/>
+                                    <constraint firstItem="SM4-9X-qPT" firstAttribute="width" secondItem="wmy-WO-M3a" secondAttribute="width" id="gFe-9B-AoW"/>
+                                    <constraint firstItem="pHP-e3-Anr" firstAttribute="width" secondItem="Vgy-qg-Wmo" secondAttribute="width" id="nA7-2X-YXU"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vuelve a ingresar tu PIN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ATB-ic-bNe" customClass="BorderLabel" customModule="machApp" customModuleProvider="target">
+                                <rect key="frame" x="97" y="231" width="180" height="20"/>
+                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="Zge-3k-rxO"/>
+                                    <constraint firstAttribute="height" constant="20" id="sZk-ee-pUU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftTextInset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightTextInset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="topTextInset">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomTextInset">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fLp-42-eiz" userLabel="pad">
+                                <rect key="frame" x="66" y="261" width="243" height="356"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="033-JH-Yij" userLabel="first row">
+                                        <rect key="frame" x="0.0" y="0.0" width="243" height="81.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qel-zn-diu" customClass="SignPasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="81.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="40"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="1"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="lHa-g3-M93" eventType="touchUpInside" id="DCU-Zt-grX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2B-Ru-b2A" customClass="SignPasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="97.5" y="0.0" width="48" height="81.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="40"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="2"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="lHa-g3-M93" eventType="touchUpInside" id="D1d-rl-7Fc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEZ-kJ-nLg" customClass="SignPasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="195.5" y="0.0" width="47.5" height="81.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="40"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="3"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="lHa-g3-M93" eventType="touchUpInside" id="auq-Tq-d8A"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="j3n-yx-fR1" userLabel="second row">
+                                        <rect key="frame" x="0.0" y="91.5" width="243" height="81.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGU-Zv-7nR" customClass="SignPasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="81.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="40"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="4"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="lHa-g3-M93" eventType="touchUpInside" id="7gY-ca-y8Z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6b-0K-otU" customClass="SignPasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="97.5" y="0.0" width="48" height="81.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="40"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="5"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="lHa-g3-M93" eventType="touchUpInside" id="hbs-8H-Low"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3U-p4-qEk" customClass="SignPasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="195.5" y="0.0" width="47.5" height="81.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="40"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="6"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="lHa-g3-M93" eventType="touchUpInside" id="5cn-zD-TB6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="8aG-PI-FBh" userLabel="third row">
+                                        <rect key="frame" x="0.0" y="183" width="243" height="81.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfs-hH-5pV" customClass="SignPasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="81.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="40"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="7"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="lHa-g3-M93" eventType="touchUpInside" id="E4N-gb-yen"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwZ-4j-2qG" customClass="SignPasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="97.5" y="0.0" width="48" height="81.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="40"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="8"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="lHa-g3-M93" eventType="touchUpInside" id="kkv-6P-n71"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOV-nH-mf5" customClass="SignPasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="195.5" y="0.0" width="47.5" height="81.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="40"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="9"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="lHa-g3-M93" eventType="touchUpInside" id="Ekb-Ex-DCi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="EAK-L2-hZA" userLabel="last row">
+                                        <rect key="frame" x="0.0" y="274.5" width="243" height="81.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BR-4U-cNQ" userLabel="delete" customClass="SignPasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="81.5"/>
+                                                <state key="normal" image="icPINDelete-dark"/>
+                                                <connections>
+                                                    <action selector="deleteButtonTap:" destination="lHa-g3-M93" eventType="touchUpInside" id="Hrj-ok-cFr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUi-zR-a7p" customClass="SignPasscodeButtonView" customModule="machApp" customModuleProvider="target">
+                                                <rect key="frame" x="97.5" y="0.0" width="48" height="81.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="40"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="passcodeValue" value="0"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passcodeButtonTapWithSender:" destination="lHa-g3-M93" eventType="touchUpInside" id="TJy-oq-V12"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnK-3q-OIO">
+                                                <rect key="frame" x="195.5" y="0.0" width="47.5" height="81.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icPINCheck" translatesAutoresizingMaskIntoConstraints="NO" id="FfE-Fo-EzB" userLabel="image-check">
+                                <rect key="frame" x="171.5" y="184" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="2zK-DF-Z57"/>
+                                    <constraint firstAttribute="height" constant="32" id="MoV-gX-6sj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="02Z-6V-of7" firstAttribute="trailing" secondItem="SHm-zU-kBr" secondAttribute="trailing" id="1So-Z0-ixU"/>
+                            <constraint firstItem="SHm-zU-kBr" firstAttribute="top" secondItem="02Z-6V-of7" secondAttribute="top" id="2oe-zk-ROq"/>
+                            <constraint firstItem="2Jx-6h-0fm" firstAttribute="top" secondItem="yCg-PA-2h7" secondAttribute="bottom" constant="36" id="BLb-vZ-VQu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fLp-42-eiz" secondAttribute="trailing" constant="50" id="DeY-c7-Qcv"/>
+                            <constraint firstItem="ATB-ic-bNe" firstAttribute="centerX" secondItem="02Z-6V-of7" secondAttribute="centerX" id="EGT-6L-bCv"/>
+                            <constraint firstItem="FfE-Fo-EzB" firstAttribute="centerX" secondItem="02Z-6V-of7" secondAttribute="centerX" id="Kaj-fz-NFa"/>
+                            <constraint firstItem="yCg-PA-2h7" firstAttribute="top" secondItem="SHm-zU-kBr" secondAttribute="bottom" constant="15" id="NG5-lV-KRD"/>
+                            <constraint firstItem="fLp-42-eiz" firstAttribute="top" secondItem="ATB-ic-bNe" secondAttribute="bottom" constant="10" id="No2-cx-AMH"/>
+                            <constraint firstItem="FfE-Fo-EzB" firstAttribute="centerY" secondItem="2Jx-6h-0fm" secondAttribute="centerY" id="YC7-pP-A0X"/>
+                            <constraint firstItem="yCg-PA-2h7" firstAttribute="leading" secondItem="Ga0-B9-oFV" secondAttribute="leadingMargin" constant="10" id="e02-9l-o5Y"/>
+                            <constraint firstItem="SHm-zU-kBr" firstAttribute="leading" secondItem="02Z-6V-of7" secondAttribute="leading" id="e74-rf-Awi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yCg-PA-2h7" secondAttribute="trailing" constant="10" id="hLr-YI-LoI"/>
+                            <constraint firstItem="2Jx-6h-0fm" firstAttribute="centerX" secondItem="02Z-6V-of7" secondAttribute="centerX" id="olb-OI-FHt"/>
+                            <constraint firstItem="ATB-ic-bNe" firstAttribute="top" secondItem="FfE-Fo-EzB" secondAttribute="bottom" constant="15" id="q5T-nX-dx0"/>
+                            <constraint firstItem="FfE-Fo-EzB" firstAttribute="centerX" secondItem="2Jx-6h-0fm" secondAttribute="centerX" id="w5h-9m-Ahf"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fLp-42-eiz" secondAttribute="bottom" constant="50" id="xkb-XF-MtS"/>
+                            <constraint firstItem="fLp-42-eiz" firstAttribute="leading" secondItem="Ga0-B9-oFV" secondAttribute="leadingMargin" constant="50" id="ydX-85-AA0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="02Z-6V-of7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fQ5-Zi-zIr"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="Ia7-8T-3Wc" id="gEf-IB-ArA"/>
+                        <outlet property="checkImage" destination="FfE-Fo-EzB" id="Fai-Ta-oxN"/>
+                        <outlet property="deleteSignButton" destination="8BR-4U-cNQ" id="9e1-HR-eNO"/>
+                        <outlet property="descriptionLabel" destination="yCg-PA-2h7" id="l3g-uC-eFw"/>
+                        <outlet property="disclaimerLabel" destination="ATB-ic-bNe" id="jPi-ln-5Pw"/>
+                        <outlet property="disclaimerWidth" destination="Zge-3k-rxO" id="gT7-dl-yj4"/>
+                        <outlet property="dotStackView" destination="2Jx-6h-0fm" id="KMe-xb-Wu8"/>
+                        <outlet property="placeholdersX" destination="olb-OI-FHt" id="vL9-xs-RXc"/>
+                        <outlet property="progressBar" destination="OeD-i4-Bd5" id="Klb-uV-fK9"/>
+                        <outlet property="titleLabel" destination="P77-gH-9bT" id="53D-ez-ix2"/>
+                        <outlet property="topView" destination="SHm-zU-kBr" id="zJO-rn-Jxn"/>
+                        <outletCollection property="placeholders" destination="Vgy-qg-Wmo" collectionClass="NSMutableArray" id="8z7-fw-Hz5"/>
+                        <outletCollection property="placeholders" destination="pHP-e3-Anr" collectionClass="NSMutableArray" id="bEl-5d-hYB"/>
+                        <outletCollection property="placeholders" destination="wmy-WO-M3a" collectionClass="NSMutableArray" id="cw5-12-dtD"/>
+                        <outletCollection property="placeholders" destination="SM4-9X-qPT" collectionClass="NSMutableArray" id="jUq-e3-tzb"/>
+                        <outletCollection property="buttons" destination="W2B-Ru-b2A" collectionClass="NSMutableArray" id="mmV-pc-UtV"/>
+                        <outletCollection property="buttons" destination="Qel-zn-diu" collectionClass="NSMutableArray" id="yNV-K2-CuR"/>
+                        <outletCollection property="buttons" destination="aEZ-kJ-nLg" collectionClass="NSMutableArray" id="Vsm-DI-lkv"/>
+                        <outletCollection property="buttons" destination="tGU-Zv-7nR" collectionClass="NSMutableArray" id="582-Ga-cHa"/>
+                        <outletCollection property="buttons" destination="s6b-0K-otU" collectionClass="NSMutableArray" id="v0O-q7-QW9"/>
+                        <outletCollection property="buttons" destination="Y3U-p4-qEk" collectionClass="NSMutableArray" id="0LF-P8-UFh"/>
+                        <outletCollection property="buttons" destination="Gfs-hH-5pV" collectionClass="NSMutableArray" id="mMP-gr-4U6"/>
+                        <outletCollection property="buttons" destination="BwZ-4j-2qG" collectionClass="NSMutableArray" id="oCH-sM-4BQ"/>
+                        <outletCollection property="buttons" destination="bOV-nH-mf5" collectionClass="NSMutableArray" id="KzH-Lq-cCt"/>
+                        <outletCollection property="buttons" destination="lUi-zR-a7p" collectionClass="NSMutableArray" id="qRH-rA-hjS"/>
+                        <segue destination="UW1-H1-hQP" kind="modal" identifier="showHome" id="LP0-Pt-MMs"/>
+                        <segue destination="zkg-zU-leJ" kind="push" identifier="showPinChangedSuccessfully" id="qMv-Dr-ynk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tGV-hM-67k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712.5" y="3.5"/>
+        </scene>
+        <!--Change Pin Successful View Controller-->
+        <scene sceneID="X8u-5t-DKR">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="zkg-zU-leJ" customClass="ChangePinSuccessfulViewController" customModule="machApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZWv-Ao-ScG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-pin-changed" translatesAutoresizingMaskIntoConstraints="NO" id="XcJ-aS-KJy">
+                                <rect key="frame" x="103.5" y="135" width="168" height="146"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y5q-me-2n7">
+                                <rect key="frame" x="30" y="330" width="315" height="247"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu PIN ha sido actualizado con éxito" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFx-wk-shM">
+                                        <rect key="frame" x="27" y="0.0" width="261.5" height="57.5"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="21"/>
+                                        <color key="textColor" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOk-NZ-k0D" customClass="LoadingButton" customModule="machApp" customModuleProvider="target">
+                                        <rect key="frame" x="58.5" y="195" width="198" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="198" id="EDw-j9-m3A"/>
+                                            <constraint firstAttribute="height" constant="52" id="wXJ-EJ-PE8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                                        <state key="normal" title="LISTO">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
+                                                <color key="value" red="0.41960784309999999" green="0.0" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="26"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="backButtonTap:" destination="zkg-zU-leJ" eventType="touchUpInside" id="dR2-eN-fG5"/>
+                                            <segue destination="ANP-8j-gdt" kind="unwind" unwindAction="unwindToMoreWithSegue:" id="8Pe-hf-T2p"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y5q-me-2n7" firstAttribute="leading" secondItem="yKO-iV-wK5" secondAttribute="leading" constant="30" id="9Lg-a7-1qN"/>
+                            <constraint firstItem="XcJ-aS-KJy" firstAttribute="top" secondItem="yKO-iV-wK5" secondAttribute="top" constant="115" id="AbI-xs-e9m"/>
+                            <constraint firstItem="y5q-me-2n7" firstAttribute="top" secondItem="XcJ-aS-KJy" secondAttribute="bottom" constant="49" id="C50-Vn-uep"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="y5q-me-2n7" secondAttribute="bottom" constant="90" id="OWY-O8-WzC"/>
+                            <constraint firstItem="XcJ-aS-KJy" firstAttribute="centerX" secondItem="yKO-iV-wK5" secondAttribute="centerX" id="n4Q-eK-ggJ"/>
+                            <constraint firstItem="yKO-iV-wK5" firstAttribute="trailing" secondItem="y5q-me-2n7" secondAttribute="trailing" constant="30" id="tmX-cV-BJm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yKO-iV-wK5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lv6-oW-d1V"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Had-Oo-zvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ANP-8j-gdt" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1713" y="915"/>
+        </scene>
+        <!--TabBar-->
+        <scene sceneID="0Cq-S0-KFF">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TabBarViewController" storyboardName="TabBar" id="UW1-H1-hQP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xwZ-Mk-fXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2268" y="3"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icArrowBack-purple" width="22" height="21"/>
+        <image name="icPINCheck" width="32" height="32"/>
+        <image name="icPINDOT-gray" width="7" height="7"/>
+        <image name="icPINDOT-purp" width="10" height="10"/>
+        <image name="icPINDelete-dark" width="37" height="25"/>
+        <image name="image-pin-changed" width="168" height="146"/>
+    </resources>
+</document>
