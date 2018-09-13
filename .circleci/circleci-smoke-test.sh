@@ -18,9 +18,11 @@ echo "IPA_PATH: ${IPA_PATH}"
 echo "IPA_FILE: ${IPA_FILE}"
 echo "IPA_OUTPUT_LOG: ${IPA_OUTPUT_LOG}"
 echo "TEST_OUTPUT_LOG: ${TEST_OUTPUT_LOG}"
+echo "TEST_TYPE: ${TEST_TYPE}"
 echo "CIRCLECI_DIR: ${CIRCLECI_DIR}"
 echo "PLATFORM: ${PLATFORM}"
-echo "ENV: ${ENV}"
+echo "PLATFORM_ENV: ${PLATFORM_ENV}"
+echo "Pipeline ENV: ${ENV}"
 echo "===================================================="
 
 echo "================================================"
@@ -33,7 +35,7 @@ echo "================================================="
 echo "===== STEP 2. Create an upload iOS IPA File ====="
 echo "================================================="
 
-aws devicefarm create-upload --project-arn ${PROJECT_ARN} --name ${IPA_FILE} --type IOS_APP > ${IPA_OUTPUT_LOG}
+aws devicefarm create-upload --project-arn ${PROJECT_ARN} --name ${IPA_PATH}/${PLATFORM_ENV}/${IPA_FILE}-${PLATFORM_ENV}.ipa --type IOS_APP > ${IPA_OUTPUT_LOG}
 IPA_ARN="`cat ${IPA_OUTPUT_LOG} | grep "arn:"| sed 's/"arn": //'| sed 's/ //g'| sed 's/[",]//g'`"
 IPA_PRESIGNED_URL="`cat ${IPA_OUTPUT_LOG} | grep "url" | sed 's/"url"://g'|sed 's/[",]//g'`"
 curl -T ${IPA_FILE} ${IPA_PRESIGNED_URL}

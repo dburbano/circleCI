@@ -45,6 +45,35 @@ jobs:
           name: Send Smoke test to AWS Device Farm
           command: chmod 755 ./${CIRCLECI_DIR}/circleci-smoke-test.sh && ./${CIRCLECI_DIR}/circleci-smoke-test.sh
 
+  aws-smoke-test:
+    docker: #Doker image to use aws resources
+      - image: circleci/python:2.7-jessie
+    environment:
+      BUCKET_REPO: "mach-mobile-automation-repos"
+      TEST_REPO: "test"
+      PROJECT_NAME: "pipeline-ios-project"
+      DEVICE_POOL_NAME: "IOS PIPELINE POOL"
+      RUN_NAME: "Smoke-CircleCI-Test"
+      IPA_PATH: "./machApp/build"
+      IPA_FILE: "machApp"
+      PLATFORM: "ios"
+      PLATFORM_ENV: "dev"       #[dev, staging, automation]
+      IPA_OUTPUT_LOG: "machApp.log"
+      TEST_OUTPUT_LOG: "test-output.log"
+      TEST_TYPE: "smoke"        #[smoke, regression] << For future changes
+      AVAILABLE_TESTS: "available-ios-tests"
+      TEST_ARN_LIST_FILE: "smoke-test-arn-list"
+      CIRCLECI_DIR: ".circleci"
+      ENV: "prod"               #Pipeline environments [-ops, -prod]
+    steps:
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Send Smoke test to AWS Device Farm
+          command: chmod 755 ./${CIRCLECI_DIR}/circleci-smoke-test.sh && ./${CIRCLECI_DIR}/circleci-smoke-test.sh
 workflows:
   version: 2
   test-in-devicefarm:
@@ -52,7 +81,13 @@ workflows:
       - checkout-test:
           filters:
             branches:
-              only: aws-communication
+              only: master
       - aws-test:
           requires:
             - checkout-test
+  test-in-device-farm2:
+    jobs:
+      - aws-smoke-test:
+          filters:
+            brnaches:
+              only: aws-communication
