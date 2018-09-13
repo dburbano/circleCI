@@ -11,7 +11,7 @@ jobs:
       - persist_to_workspace:
           root: ./
           paths:
-            - config
+            - .circleci
   aws-test:
     docker: #Doker image to use aws resources
       - image: circleci/python:2.7-jessie
@@ -43,82 +43,8 @@ jobs:
             aws s3 cp s3://${BUCKET_REPO}/${PLATFORM}/${IPA_FILE} ./${IPA_FILE}
             pwd && ls -all
       - run:
-          name: "STEP 1. DeviceFarm project name"
-          command: |
-            echo "Project name: ${PROJECT_NAME}"
-            echo "Project ARN: ${PROJECT_ARN}"
-      - run:
-          name: "STEP 2. Create an upload iOS IPA File"
-          command: |
-            aws devicefarm create-upload --project-arn ${PROJECT_ARN} --name ${IPA_FILE} --type IOS_APP > ${IPA_OUTPUT_LOG}
-            IPA_ARN="`cat ${IPA_OUTPUT_LOG} | grep "arn:"| sed 's/"arn": //'| sed 's/ //g'| sed 's/[",]//g'`"
-            IPA_PRESIGNED_URL="`cat ${IPA_OUTPUT_LOG} | grep "url" | sed 's/"url"://g'|sed 's/[",]//g'`"
-            curl -T ${IPA_FILE} ${IPA_PRESIGNED_URL}
-            echo "${IPA_ARN}"
-            sleep 60
-            aws devicefarm get-upload --arn "${IPA_ARN}"
-
-            echo "===== STEP 3. Create an upload test package ====="
-            aws s3 cp s3://$BUCKET_REPO/$TEST_REPO/$AVAILABLE_TESTS ./$AVAILABLE_TESTS
-            LIST_AVAILABLE_TEST=( `sed ':a;N;$!ba;s/\n/ /g' ./$AVAILABLE_TESTS` )
-            echo $LIST_AVAILABLE_TEST
-            for TEST_FILE in ${LIST_AVAILABLE_TEST[@]}; do
-                aws s3 cp s3://${BUCKET_REPO}/${TEST_REPO}/${TEST_FILE}${ENV}.zip ./${TEST_FILE}${ENV}.zip
-                aws devicefarm create-upload --project-arn ${PROJECT_ARN} --name ${TEST_FILE}${ENV}.zip --type APPIUM_JAVA_TESTNG_TEST_PACKAGE > ${TEST_OUTPUT_LOG}
-                TEST_ARN="`cat ${TEST_OUTPUT_LOG} | grep "arn":| sed 's/"arn": //'| sed 's/ //g'| sed 's/[",]//g'`"
-                echo "${TEST_FILE}|${TEST_ARN}" >> ./${TEST_ARN_LIST_FILE}
-                TEST_PRESIGNED_URL="`cat ${TEST_OUTPUT_LOG}| grep "url" | sed 's/"url"://'|sed 's/[",]//g'`"
-                curl -T ${TEST_FILE}${ENV}.zip ${TEST_PRESIGNED_URL}
-                sleep 60
-                aws devicefarm get-upload --arn "${TEST_ARN}"
-            done
-
-            echo "===== STEP 4. Create a device pool associated with the Project ======"
-
-            echo "===== STEP 5. Schedule the Run ======"
-            echo "PROJECT ARN: ${PROJECT_ARN}"
-            echo "TEST_ARN: ${TEST_ARN}"
-            echo "IPA ARN: ${IPA_ARN}"
-            echo "DEVICE POOL ARN: ${DEVICE_POOL_ARN}"
-            echo "RUN NAME: ${RUN_NAME}"
-            SUFFIX=`date +"%s"`
-            pwd
-            ls
-            for TEST_ARN_LINE in `cat ./${TEST_ARN_LIST_FILE}`; do
-                TEST_ARN=${TEST_ARN_LINE##*|}
-                RUN_NAME="S${ENV}-${TEST_ARN_LINE%%|*}"
-                sed 's|REPLACE_TEST_ARN|'"${TEST_ARN}"'|g' ./config/template-test.json > ./config/smoke.json
-                aws devicefarm schedule-run --project-arn ${PROJECT_ARN} --app-arn ${IPA_ARN} --device-pool-arn ${DEVICE_POOL_ARN} --name "${RUN_NAME}-${SUFFIX}" --test file://./config/smoke.json
-            done
-
-  aws-test2:
-      docker: #Doker image to use aws resources
-        - image: circleci/python:2.7-jessie
-      environment:
-        BUCKET_REPO: "mach-mobile-automation-repos"
-        TEST_REPO: "test"
-        PROJECT_NAME: "pipeline-ios-project"
-        PROJECT_ARN: "arn:aws:devicefarm:us-west-2:425782179927:project:69683c23-ccfb-4308-b0f8-33f34d6098e0"
-        DEVICE_POOL_NAME: "ApplePhone"
-        DEVICE_POOL_ARN: "arn:aws:devicefarm:us-west-2:425782179927:devicepool:69683c23-ccfb-4308-b0f8-33f34d6098e0/67db20ae-9259-439a-ad35-bf29773e5ce4"
-        RUN_NAME: "Smoke-CircleCI-Test"
-        IPA_PATH: "./machApp/build/dev"
-        IPA_FILE: "machApp-dev-ops.ipa"
-        IPA_OUTPUT_LOG: "machApp-dev.log"
-        TEST_OUTPUT_LOG: "test-output.log"
-        AVAILABLE_TESTS: "available-ios-tests"
-        TEST_ARN_LIST_FILE: "smoke-test-arn-list"
-        PLATFORM: "ios"
-        ENV: "-ops"
-      steps:
-        - attach_workspace:
-            at: ./
-        - run:
-            name: Install awscli
-            command: sudo pip install awscli
-        - run:
-            name: Execute test in AWS Device Farm
-            command: chmod 755 ./config/smoke-test.sh && ./config/smoke-test.sh
+          name: Send Smoke test to AWS Device Farm
+          command: chmod 755 ./.circleci/circleci-smoke-test.sh && ./.circleci/circleci-smoke-test.sh
 
 workflows:
   version: 2
@@ -131,13 +57,3 @@ workflows:
       - aws-test:
           requires:
             - checkout-test
-  test2-in-devicefarm:
-    jobs:
-      - checkout-test:
-          filters:
-            branches:
-              only: master
-      - aws-test2:
-          requires:
-            - checkout-test
-
