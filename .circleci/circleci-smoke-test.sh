@@ -57,7 +57,7 @@ for TEST_FILE in ${LIST_AVAILABLE_TEST[@]}; do
     TEST_PRESIGNED_URL="`cat ${TEST_OUTPUT_LOG}| grep "url" | sed 's/"url"://'|sed 's/[",]//g'`"
     curl -T ${TEST_FILE}${ENV}.zip ${TEST_PRESIGNED_URL}
     aws devicefarm get-upload --arn "${TEST_ARN}"
-    sleep 60
+    sleep 120
 done
 
 echo "===================================================================="
