@@ -57,9 +57,8 @@ jobs:
             echo "${IPA_ARN}"
             sleep 60
             aws devicefarm get-upload --arn "${IPA_ARN}"
-      - run:
-          name: "STEP 3. Create an upload test package"
-          command: |
+
+            echo "===== STEP 3. Create an upload test package ====="
             aws s3 cp s3://$BUCKET_REPO/$TEST_REPO/$AVAILABLE_TESTS ./$AVAILABLE_TESTS
             LIST_AVAILABLE_TEST=( `sed ':a;N;$!ba;s/\n/ /g' ./$AVAILABLE_TESTS` )
             echo $LIST_AVAILABLE_TEST
@@ -73,12 +72,10 @@ jobs:
                 sleep 60
                 aws devicefarm get-upload --arn "${TEST_ARN}"
             done
-      - run:
-          name: "STEP 4. Create a device pool associated with the Project"
-          command: echo "There is a device pool ($DEVICE_POOL_NAME) associated to the project name $PROJECT_NAME"
-      - run:
-          name: "STEP 5. Schedule the Run"
-          command: |
+
+            echo "===== STEP 4. Create a device pool associated with the Project ======"
+
+            echo "===== STEP 5. Schedule the Run ======"
             echo "PROJECT ARN: ${PROJECT_ARN}"
             echo "TEST_ARN: ${TEST_ARN}"
             echo "IPA ARN: ${IPA_ARN}"
@@ -93,6 +90,7 @@ jobs:
                 sed 's|REPLACE_TEST_ARN|'"${TEST_ARN}"'|g' ./config/template-test.json > ./config/smoke.json
                 aws devicefarm schedule-run --project-arn ${PROJECT_ARN} --app-arn ${IPA_ARN} --device-pool-arn ${DEVICE_POOL_ARN} --name "${RUN_NAME}-${SUFFIX}" --test file://./config/smoke.json
             done
+
   aws-test2:
       docker: #Doker image to use aws resources
         - image: circleci/python:2.7-jessie
