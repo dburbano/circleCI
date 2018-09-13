@@ -59,7 +59,7 @@ jobs:
       IPA_PATH: "./machApp/build"
       IPA_FILE: "machApp"
       PLATFORM: "ios"
-      PLATFORM_ENV: "dev"       #[dev, staging, automation]
+      PLATFORM_ENV: "staging"       #[dev, staging, automation]
       IPA_OUTPUT_LOG: "machApp.log"
       TEST_OUTPUT_LOG: "test-output.log"
       TEST_TYPE: "smoke"        #[smoke, regression] << For future changes
