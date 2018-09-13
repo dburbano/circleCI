@@ -89,7 +89,10 @@ workflows:
             - checkout-test
   test-in-device-farm2:
     jobs:
-      - aws-smoke-test:
+      - checkout-test:
           filters:
-            brnaches:
+            branches:
               only: aws-communication
+      - aws-smoke-test:
+          requires:
+            - checkout-test
