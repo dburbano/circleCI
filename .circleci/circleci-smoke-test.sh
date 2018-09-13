@@ -19,6 +19,8 @@ echo "IPA_FILE: ${IPA_FILE}"
 echo "IPA_OUTPUT_LOG: ${IPA_OUTPUT_LOG}"
 echo "TEST_OUTPUT_LOG: ${TEST_OUTPUT_LOG}"
 echo "CIRCLECI_DIR: ${CIRCLECI_DIR}"
+echo "PLATFORM: ${PLATFORM}"
+echo "ENV: ${ENV}"
 echo "===================================================="
 
 echo "================================================"
