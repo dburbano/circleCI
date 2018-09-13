@@ -36,7 +36,6 @@ IPA_ARN="`cat ${IPA_OUTPUT_LOG} | grep "arn:"| sed 's/"arn": //'| sed 's/ //g'| 
 IPA_PRESIGNED_URL="`cat ${IPA_OUTPUT_LOG} | grep "url" | sed 's/"url"://g'|sed 's/[",]//g'`"
 curl -T ${IPA_FILE} ${IPA_PRESIGNED_URL}
 echo "${IPA_ARN}"
-sleep 60
 aws devicefarm get-upload --arn "${IPA_ARN}"
 
 echo "================================================="
@@ -53,8 +52,8 @@ for TEST_FILE in ${LIST_AVAILABLE_TEST[@]}; do
     echo "${TEST_FILE}|${TEST_ARN}" >> ./${TEST_ARN_LIST_FILE}
     TEST_PRESIGNED_URL="`cat ${TEST_OUTPUT_LOG}| grep "url" | sed 's/"url"://'|sed 's/[",]//g'`"
     curl -T ${TEST_FILE}${ENV}.zip ${TEST_PRESIGNED_URL}
-    sleep 60
     aws devicefarm get-upload --arn "${TEST_ARN}"
+    sleep 60
 done
 
 echo "===================================================================="
