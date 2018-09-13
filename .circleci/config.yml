@@ -19,9 +19,7 @@ jobs:
       BUCKET_REPO: "mach-mobile-automation-repos"
       TEST_REPO: "test"
       PROJECT_NAME: "pipeline-ios-project"
-      PROJECT_ARN: "arn:aws:devicefarm:us-west-2:425782179927:project:69683c23-ccfb-4308-b0f8-33f34d6098e0"
       DEVICE_POOL_NAME: "ApplePhone"
-      DEVICE_POOL_ARN: "arn:aws:devicefarm:us-west-2:425782179927:devicepool:69683c23-ccfb-4308-b0f8-33f34d6098e0/67db20ae-9259-439a-ad35-bf29773e5ce4"
       RUN_NAME: "Smoke-CircleCI-Test"
       IPA_PATH: "./machApp/build/dev"
       IPA_FILE: "machApp-dev-ops.ipa"
@@ -29,6 +27,7 @@ jobs:
       TEST_OUTPUT_LOG: "test-output.log"
       AVAILABLE_TESTS: "available-ios-tests"
       TEST_ARN_LIST_FILE: "smoke-test-arn-list"
+      CIRCLECI_DIR: ".circleci"
       PLATFORM: "ios"
       ENV: "-ops"
     steps:
@@ -44,7 +43,7 @@ jobs:
             pwd && ls -all
       - run:
           name: Send Smoke test to AWS Device Farm
-          command: chmod 755 ./.circleci/circleci-smoke-test.sh && ./.circleci/circleci-smoke-test.sh
+          command: chmod 755 ./${CIRCLECI_DIR}/circleci-smoke-test.sh && ./${CIRCLECI_DIR}/circleci-smoke-test.sh
 
 workflows:
   version: 2

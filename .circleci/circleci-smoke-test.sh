@@ -18,6 +18,7 @@ echo "IPA_PATH: ${IPA_PATH}"
 echo "IPA_FILE: ${IPA_FILE}"
 echo "IPA_OUTPUT_LOG: ${IPA_OUTPUT_LOG}"
 echo "TEST_OUTPUT_LOG: ${TEST_OUTPUT_LOG}"
+echo "CIRCLECI_DIR: ${CIRCLECI_DIR}"
 echo "===================================================="
 
 echo "================================================"
@@ -77,6 +78,6 @@ ls
 for TEST_ARN_LINE in `cat ./${TEST_ARN_LIST_FILE}`; do
     TEST_ARN=${TEST_ARN_LINE##*|}
     RUN_NAME="S${ENV}-${TEST_ARN_LINE%%|*}"
-    sed 's|REPLACE_TEST_ARN|'"${TEST_ARN}"'|g' ./.circleci/template-test.json > ./.circleci/smoke.json
-    aws devicefarm schedule-run --project-arn ${PROJECT_ARN} --app-arn ${IPA_ARN} --device-pool-arn ${DEVICE_POOL_ARN} --name "${RUN_NAME}-CircleCI-${SUFFIX}" --test file://./config/smoke.json
+    sed 's|REPLACE_TEST_ARN|'"${TEST_ARN}"'|g' ./${CIRCLECI_DIR}/template-test.json > ./${CIRCLECI_DIR}/smoke.json
+    aws devicefarm schedule-run --project-arn ${PROJECT_ARN} --app-arn ${IPA_ARN} --device-pool-arn ${DEVICE_POOL_ARN} --name "${RUN_NAME}-CircleCI-${SUFFIX}" --test file://./${CIRCLECI_DIR}/smoke.json
 done
