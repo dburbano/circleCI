@@ -19,17 +19,19 @@ jobs:
       BUCKET_REPO: "mach-mobile-automation-repos"
       TEST_REPO: "test"
       PROJECT_NAME: "pipeline-ios-project"
-      DEVICE_POOL_NAME: "ApplePhone"
+      DEVICE_POOL_NAME: "IOS PIPELINE POOL"
       RUN_NAME: "Smoke-CircleCI-Test"
-      IPA_PATH: "./machApp/build/dev"
-      IPA_FILE: "machApp-dev-ops.ipa"
-      IPA_OUTPUT_LOG: "machApp-dev.log"
+      IPA_PATH: "./machApp/build"
+      IPA_FILE: "machApp"
+      PLATFORM: "ios"
+      PLATFORM_ENV: "staging"       #[dev, staging, automation]
+      IPA_OUTPUT_LOG: "machApp.log"
       TEST_OUTPUT_LOG: "test-output.log"
+      TEST_TYPE: "smoke"        #[smoke, regression] << For future changes
       AVAILABLE_TESTS: "available-ios-tests"
       TEST_ARN_LIST_FILE: "smoke-test-arn-list"
       CIRCLECI_DIR: ".circleci"
-      PLATFORM: "ios"
-      ENV: "-ops"
+      ENV: "prod"               #Pipeline environments [-ops, -prod]
     steps:
       - attach_workspace:
           at: ./
