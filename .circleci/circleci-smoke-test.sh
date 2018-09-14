@@ -36,7 +36,7 @@ echo "===== STEP 2. Create an upload iOS IPA File ====="
 echo "================================================="
 
 pwd && ls --all
-aws devicefarm create-upload --project-arn ${PROJECT_ARN} --name ${IPA_PATH}/${PLATFORM_ENV}/${IPA_FILE}-${PLATFORM_ENV}.ipa --type IOS_APP > ${IPA_OUTPUT_LOG}
+aws devicefarm create-upload --project-arn ${PROJECT_ARN} --name ${IPA_FILE}-${PLATFORM_ENV}.ipa --type IOS_APP > ${IPA_OUTPUT_LOG}
 IPA_ARN="`cat ${IPA_OUTPUT_LOG} | grep "arn:"| sed 's/"arn": //'| sed 's/ //g'| sed 's/[",]//g'`"
 IPA_PRESIGNED_URL="`cat ${IPA_OUTPUT_LOG} | grep "url" | sed 's/"url"://g'|sed 's/[",]//g'`"
 curl -T ${IPA_PATH}/${PLATFORM_ENV}/${IPA_FILE}-${PLATFORM_ENV}.ipa ${IPA_PRESIGNED_URL}
