@@ -12,6 +12,7 @@ jobs:
           root: ./
           paths:
             - .circleci
+            - machApp
   aws-test:
     docker: #Doker image to use aws resources
       - image: circleci/python:2.7-jessie
