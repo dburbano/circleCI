@@ -1,5 +1,0 @@
-git_url "git@github.com:bcilabs/ios-mach-certificates.git"
-
-type "development" # The default type, can be: appstore, adhoc or development
-
-username "lukasburns07@gmail.com" # Your Apple Developer Portal username

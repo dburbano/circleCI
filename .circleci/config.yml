@@ -84,7 +84,7 @@ workflows:
       - checkout-test:
           filters:
             branches:
-              only: master
+              only: aws-communication
       - aws-test:
           requires:
             - checkout-test
@@ -93,7 +93,7 @@ workflows:
       - checkout-test:
           filters:
             branches:
-              only: aws-communication
+              only: master
       - aws-smoke-test:
           requires:
             - checkout-test
