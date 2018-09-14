@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Get IPA file from S3
           command: |
-            aws s3 cp s3://${BUCKET_REPO}/${PLATFORM}/${IPA_FILE} ./${IPA_FILE}
+            aws s3 cp s3://${BUCKET_REPO}/${PLATFORM}/${IPA_FILE}-${PLATFORM_ENV}${ENV}.ipa ./${IPA_FILE}-${PLATFORM_ENV}${ENV}.ipa
             pwd && ls -all
       - run:
           name: Send Smoke test to AWS Device Farm
