@@ -25,14 +25,14 @@ jobs:
       IPA_PATH: "./machApp/build"
       IPA_FILE: "machApp"
       PLATFORM: "ios"
-      PLATFORM_ENV: "staging"       #[dev, staging, automation]
+      PLATFORM_ENV: "dev"       #[dev, staging, automation]
       IPA_OUTPUT_LOG: "machApp.log"
       TEST_OUTPUT_LOG: "test-output.log"
       TEST_TYPE: "smoke"        #[smoke, regression] << For future changes
       AVAILABLE_TESTS: "available-ios-tests"
       TEST_ARN_LIST_FILE: "smoke-test-arn-list"
       CIRCLECI_DIR: ".circleci"
-      ENV: "prod"               #Pipeline environments [-ops, -prod]
+      ENV: "-ops"               #Pipeline environments [-ops, -prod]
     steps:
       - attach_workspace:
           at: ./
@@ -86,14 +86,5 @@ workflows:
             branches:
               only: aws-communication
       - aws-test:
-          requires:
-            - checkout-test
-  test-in-device-farm2:
-    jobs:
-      - checkout-test:
-          filters:
-            branches:
-              only: master
-      - aws-smoke-test:
           requires:
             - checkout-test
