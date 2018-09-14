@@ -35,7 +35,7 @@ echo "================================================="
 echo "===== STEP 2. Create an upload iOS IPA File ====="
 echo "================================================="
 
-pwd && ls
+pwd && ls --all
 aws devicefarm create-upload --project-arn ${PROJECT_ARN} --name ${IPA_PATH}/${PLATFORM_ENV}/${IPA_FILE}-${PLATFORM_ENV}.ipa --type IOS_APP > ${IPA_OUTPUT_LOG}
 IPA_ARN="`cat ${IPA_OUTPUT_LOG} | grep "arn:"| sed 's/"arn": //'| sed 's/ //g'| sed 's/[",]//g'`"
 IPA_PRESIGNED_URL="`cat ${IPA_OUTPUT_LOG} | grep "url" | sed 's/"url"://g'|sed 's/[",]//g'`"
@@ -58,7 +58,7 @@ for TEST_FILE in ${LIST_AVAILABLE_TEST[@]}; do
     TEST_PRESIGNED_URL="`cat ${TEST_OUTPUT_LOG}| grep "url" | sed 's/"url"://'|sed 's/[",]//g'`"
     curl -T ${TEST_FILE}${ENV}.zip ${TEST_PRESIGNED_URL}
     aws devicefarm get-upload --arn "${TEST_ARN}"
-    sleep 120
+    sleep 60
 done
 
 echo "===================================================================="
