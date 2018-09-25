@@ -85,7 +85,7 @@ workflows:
       - checkout-test:
           filters:
             branches:
-              only: develop
+              only: aws-communication-test
       - aws-test:
           requires:
             - checkout-test
